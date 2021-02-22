@@ -58,7 +58,7 @@ export default function SignUp() {
 		console.log(formData);
 
 		axiosInstance
-			.post(`/register/`, {
+			.post(`api/create/`, {
 				email: formData.email,
 				username: formData.username,
 				password: formData.password,
@@ -130,13 +130,9 @@ export default function SignUp() {
 					>
 						Sign Up
 					</Button>
-					<Grid container justify="flex-end">
-						<Grid item>
 							<Link href="/login" variant="body2">
 								Already have an account? Sign in
 							</Link>
-						</Grid>
-					</Grid>
 				</form>
 			</div>
 		</Container>
