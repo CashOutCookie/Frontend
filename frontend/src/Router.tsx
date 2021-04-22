@@ -1,5 +1,4 @@
 import React from 'react';
-import './scss/default.scss';
 import Dashboard from './pages/Dashboard'
 
 import { Route, BrowserRouter, Switch } from 'react-router-dom';

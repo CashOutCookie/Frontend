@@ -1,0 +1,97 @@
+@import 'vars.scss';
+
+
+nav {
+    display: flex;
+    align-items: center;
+    height: 10vh;
+    width: 100vw;
+    font-family: $regular;
+}
+nav > * {
+    width: calc(100% / 2);
+}
+.logo {
+    color: black;
+    font-family: $heavy;
+    letter-spacing: 1px;
+    font-size: 18px;
+}
+.logo h1 {
+    margin-left: 5%;
+}
+
+.links {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-links {
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+    margin-right: 10%;
+}
+
+.nav-links li, .nav-links li a {
+    list-style: none;
+    color: rgb(48, 48, 48);
+    text-decoration: none;
+    position: relative;
+}
+
+
+.nav-links li a:after {    
+    background: none repeat scroll 0 0 transparent;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: rgb(0, 0, 0);
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+
+
+.nav-links li a:hover:after { 
+  width: 100%; 
+  left: 0; 
+}
+
+.line {
+    width: 25px;
+    height: 4px;
+    background: black;
+    cursor: pointer;
+}
+
+.line2, .line3 {
+    margin-top: 3px;
+}
+
+.burger {
+    display: none;
+    align-items: flex-end;
+    margin-right: 10%;
+}
+
+@media screen and (max-width: 1280px) {
+    .nav-links {
+        width: 100%;
+    }
+    .logo {
+        margin-left: 7%;
+    }
+}
+
+
+@media screen and (max-width: 900px) {
+    .nav-links {
+        display: none;
+    }
+    .burger {
+        display: flex;
+        flex-direction: column;
+    }
+}
