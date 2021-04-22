@@ -1,0 +1,84 @@
+/** Gamble **/
+section{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: radial-gradient(#333, #000);
+  }
+  .coins{
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .coins div{
+    position: absolute;
+    display: block;
+  }
+  .coins div:nth-child(1){
+    left: 20%;
+    animation: animate 15s linear infinite;
+    animation-delay: -7s;
+  }
+  .coins div:nth-child(2){
+    left: 50%;
+    animation: animate 17s linear infinite;
+    animation-delay: -5s;
+  }
+  .coins div:nth-child(3){
+    left: 70%;
+    animation: animate 19s linear infinite;
+    animation-delay: -3s;
+  }
+  .coins div:nth-child(4){
+    left: 0;
+    animation: animate 11s linear infinite;
+    animation-delay: -1s;
+  }
+  .coins div:nth-child(5){
+    left: 30%;
+    animation: animate 13s linear infinite;
+  }
+  .coins div:nth-child(6){
+    left: 60%;
+    animation: animate 20s linear infinite;
+  }
+  .coins div:nth-child(7){
+    left: 80%;
+    animation: animate 25s linear infinite;
+  }
+  .coins div:nth-child(8){
+    left: 10%;
+    animation: animate 18s linear infinite;
+  }
+  
+  @keyframes animate{
+    0%{
+        opacity: 0;
+        top: 0%;
+        transform: translateX(0px) rotate(0deg);
+    }
+    10%{
+        opacity: 1;
+    }
+    20%{
+        transform: translateX(0px) rotate(60deg);
+    }
+    100%{
+        top: 100%;
+    }
+  }
+  .set2{
+    transform: scale(1.5);
+    transform: translateX(0px) rotateY(180deg);
+    filter: blur(5px);
+  }
+  .cookieImg{
+    height:10%;
+    width:10%;
+  }
+/* #transferPage-box{
+  height: 350px !important;
+} */

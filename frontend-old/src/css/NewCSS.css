@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+* {
+    margin: 0 auto;
+    outline: none;
+}
+body {
+    font-family: 'Poppins', sans-serif !important;
+    height: 100vh;
+}
+.marquee{
+    text-align: justify;
+}
+.gradient{
+    max-width: 100%;
+    height: 50vh;
+    overflow: hidden;
+    background-image: url('../images/GradientBG.png');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.cookie-name{
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+}
+.cookie-name:hover{
+    color:rgba(255, 255, 255, 1.0);
+    transition: 0.2s all;
+}
+.contact-btn-ended{
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    width: 100px;
+    height: 30px;
+}
+.contact-btn-ended:hover{
+    background:rgba(255, 255, 255, 0.3);
+
+}
+.winners-h1{
+    text-align: center;
+    margin-top: 2vh;
+}
+.winner-box{
+    height: 200px;
+    width: 200px;
+    margin: 20px;
+    max-width: 70%;
+    border-radius: 1rem;
+    background:rgba(0, 255, 255, 0.2);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.winner-box::after{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 1rem;
+    opacity: 0;
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.winner-box:hover{
+    -webkit-transform: scale(1.25, 1.25);
+    transform: scale(1.25, 1.25);
+}
+.winner-box:hover::after{
+    opacity: 1;
+}
+.winners-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2vh;
+}
+.winner-box > * {
+    margin-left: 2vh;
+}
+.badge{
+    width: 24%;
+}
+.pfp{
+    border-radius: 100%;
+    width: 24%;
+}
+@media only screen and (max-width: 600px) {
+    .winners-container{
+        flex-direction: column;
+    }
+}
