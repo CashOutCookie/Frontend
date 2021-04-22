@@ -22,6 +22,35 @@ body {
     width: 7vw;
     height: 90vh;
 }
+.sidebar-flex {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.sidebar-flex div img {
+    width: calc(10px + 1.2vw);
+}
+.sidebar-flex div {
+    width: 100%;
+    height: 9.8vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 2.5vh 0vh 0vh 2.5vh;
+}
+.mtop {
+    margin-top: 8vh;
+}
+.side-active {
+    background-color: $sbg;
+}
+.side-active img {
+    filter: invert(100%);
+}
 .dash-content {
     width: 93vw;
     height: 89vh;
