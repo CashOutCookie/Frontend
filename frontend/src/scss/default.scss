@@ -12,7 +12,7 @@ body {
 
 // Dashboard
 
-.dash-body {
+.app-body {
     height: 90vh;
     display: flex;
     align-items: flex-end;
@@ -35,7 +35,7 @@ body {
 }
 .sidebar-flex div {
     width: 100%;
-    height: 9.8vh;
+    height: 12vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -43,18 +43,19 @@ body {
     border-radius: 2.5vh 0vh 0vh 2.5vh;
 }
 .mtop {
-    margin-top: 8vh;
+    margin-top: 5vh;
 }
 .side-active {
     background-color: $sbg;
+    transition: all linear 0.3s;
 }
 .side-active img {
     filter: invert(100%);
 }
-.dash-content {
+.app-content {
     width: 93vw;
     height: 89vh;
-    border-radius: 28px 0px 0px 0px;
+    border-radius: 4vh 0px 0px 0px;
     background: $sbg;
 }
 
@@ -64,7 +65,7 @@ body {
     .sidebar {
         width: 15vw;
     }
-    .dash-content {
+    .app-content {
         width: 85vw;
     }
 }

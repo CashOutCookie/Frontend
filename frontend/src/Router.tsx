@@ -1,18 +1,18 @@
 import React from 'react';
-import Dashboard from './pages/Dashboard'
+import { App } from './pages/App'
 
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
 
-function App() {
+function Router() {
   return(
     <div className="router">
       <BrowserRouter>
         <Switch>
-          <Route path="/dashboard" exact component={Dashboard} />
+          <Route path="/app" exact component={App} />
         </Switch>
       </BrowserRouter>
     </div>
   )
 }
 
-export default App
+export default Router
