@@ -1,12 +1,28 @@
 import React from 'react'
-import Content from './Content'
-
-
+import bankGradient from '../../images/Gradients/Bank.png'
+import workGradient from '../../images/Gradients/Work.png'
+import spendGradient from '../../images/Gradients/Spend.png'
 
 function Dashboard() {
     return(
         <div>
-            <p>This is a test text</p>
+
+            <div className="dash-flex">
+                <div className="dash-gradients-div">
+                    {/* <h1 className="dash-items">Bank</h1> */}
+                    <img className="dash-gradients" alt="" src={bankGradient} />
+                </div>
+                <div className="dash-gradients-div">
+                    <img className="dash-gradients" alt="" src={workGradient} />
+                </div>
+                <div className="dash-gradients-div">
+                    <img className="dash-gradients" alt="" src={spendGradient} />
+                </div>
+            </div>
+
+            <div className="rank-balance-div">
+            </div>
+
         </div>
     )
 }

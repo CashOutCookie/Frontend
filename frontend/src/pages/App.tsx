@@ -3,29 +3,33 @@ import '../scss/default.scss'
 import Navbar from './Components/Navbar'
 import SidebarIcons from './Components/SidebarIcons'
 import Content from './AppContent/Content'
+import Dashboard from './AppContent/Dashboard'
 
-let pageName = 'Dashboard'
 
-function changePageName(page) {
-    pageName = page
-}
 
 function App() {
+
+    const [currentPage, setCurrentPage] = useState('Dashboard')
+    const [pageContent, setPageContent] = useState(Dashboard)
+
+    function onPageChange(pageName, pageContent) {
+        setCurrentPage(pageName)
+        setPageContent(pageContent)
+    }
 
     return(
         <div>
             <Navbar />
             
-            {console.log(pageName)}
 
             <div className="app-body">
 
 
                 <div className="sidebar">
-                    <SidebarIcons />
+                    <SidebarIcons onChange={onPageChange} />
                 </div>
 
-                <Content heading={pageName} />
+            <Content heading={currentPage} actual={pageContent} />
 
             {/* Add the main content here */}
 
@@ -35,4 +39,4 @@ function App() {
     )
 }
 
-export { App, changePageName }
+export { App }
