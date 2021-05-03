@@ -71,6 +71,10 @@
     z-index: 4;
     color: black;
     position: absolute;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     font-family: $bold;
 }
 .rank-balance-div{
@@ -83,6 +87,9 @@
 }
 .dash-gradients-div, .dash-gradients{
     width: 16vw;
+}
+.dash-gradients-div {
+    position: relative;
 }
 
 // Media queries

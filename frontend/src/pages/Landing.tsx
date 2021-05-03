@@ -5,16 +5,16 @@ import Navbar from './Components/Navbar'
 export const Landing:FC = () => {
     return (
         <>
-            <section>
+            <section className="landing">
                 <Navbar />
                 <article>
                     <h1>Play games to earn real Prizes</h1>
-                    <h2> Yes, its that simple.</h2>
+                    <h2>Yes, its that simple.</h2>
                     <p>
                         CashoutCookie is a real life simulation of a currency referred to as Cookies. It is no way.
                         related to a real currency but functions simlarly. The top players every month get real prizes like Discord Nitros.
                     </p>
-                    <button>Play Now ▶</button>
+                    <a className="playnow" href="/app">Play Now ▶</a>
                 </article>
             </section>
         </>

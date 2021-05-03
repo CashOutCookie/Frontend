@@ -4,6 +4,91 @@
     color: white;
     font-family: $bold;
     font-size: 1.8rem;
-    margin: 0;
     margin-top: 7.1vh;
+}
+.login-parent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+}
+.login-section {
+    background: $sbg;
+    height: 90vh;
+    width: 100vw;
+    border-radius: 2.5vw 2.5vw 0vw 0vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-section h1 {
+    text-align: center;
+    font-family: $bold;
+    color: white;
+    margin-top: 7vh;
+    font-size: calc(25px + 1.1vw)
+}
+
+.login-box {
+    margin-top: 1vh;
+    width: 32vw;
+    height: 58vh;
+    background: #32374B;
+    border-radius: 2.5vw;
+}
+.login-box > form {
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+}
+.login-box > form > p {
+    margin-left: 8%;
+}
+.login-box > form > input {
+    margin-left: 6%;
+    height: 6vh;
+    width: 85%;
+    border-radius: 0.7vw;
+    border: none;
+    font-size: 18px;
+    padding-left: 12px;
+}
+.login-box > form > button {
+    width: 12vw;
+    margin-top: 7vh;
+    height: 6vh;
+    margin-left: 30%;
+    background: $main;
+    font-size: 14px;
+    color: white;
+    font-family: $regular;
+    outline: none;
+    border: none;
+    border-radius: 0.7vw;
+    cursor: pointer;
+}
+.login-box > form > button:hover {
+    background: $darkermain;
+    transition: all 0.3s ease-in-out;
+}
+.login-box > form > p {
+    color: white;
+}
+.login-footer{
+    display: flex;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 1vh;
+    align-items: center;
+    justify-content: space-between;
+}
+.login-footer > p {
+    color: $main;
+    font-size: calc(10px + 0.4vw);
+}
+.login-footer > p:hover {
+    color: $darkermain;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
 }
