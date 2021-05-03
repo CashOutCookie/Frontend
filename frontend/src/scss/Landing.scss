@@ -1,0 +1,51 @@
+@import 'vars.scss';
+a {
+    &:hover, &:visited, &:active, &:link {
+        color: black;
+        text-decoration: none;
+    }
+}
+html, body {
+    height: 100%;
+}
+
+
+.nav-contents {
+    display: flex;
+    justify-content: space-around;
+}
+
+section {
+    background-image: url('../images/landing-background.svg');
+    height: 100vh;
+}
+
+h1 {
+    font-family: $bold;
+    font-size: 50px;
+}
+h2 {
+    font-family: $bold;
+    font-size: 35px;
+}
+p {
+    font-family: $regular;
+    font-size: 20px;
+}
+button {
+    background: #32374B;
+    border-radius: 36px;
+    width: 434px;
+    height: 81px;
+    color: #fff;
+    font-family: $bold;
+    font-size: 20px;
+}
+article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-right: 100px;
+    padding-left: 100px;
+}
