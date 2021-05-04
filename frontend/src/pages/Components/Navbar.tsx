@@ -6,7 +6,7 @@ function Navbar() {
         <div>
             <nav>
                 <div className="logo">
-                    <h1>cc.</h1>
+                    <a href="/"><h1>cc.</h1></a>
                 </div>
 
                 <div className="links">

@@ -26,27 +26,32 @@
     text-align: center;
     font-family: $bold;
     color: white;
-    margin-top: 7vh;
-    font-size: calc(25px + 1.1vw)
+    margin-top: 5vh;
+    font-size: calc(20px + 1.4vw)
 }
 
 .login-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-top: 1vh;
     width: 32vw;
-    height: 58vh;
+    height: calc(200px + 33vh);
     background: #32374B;
     border-radius: 2.5vw;
 }
 .login-box > form {
     margin-top: 5%;
+    width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 .login-box > form > p {
+    align-self: flex-start;
     margin-left: 8%;
 }
 .login-box > form > input {
-    margin-left: 6%;
     height: 6vh;
     width: 85%;
     border-radius: 0.7vw;
@@ -55,10 +60,9 @@
     padding-left: 12px;
 }
 .login-box > form > button {
-    width: 12vw;
+    width: 40%;
     margin-top: 7vh;
     height: 6vh;
-    margin-left: 30%;
     background: $main;
     font-size: 14px;
     color: white;
@@ -78,8 +82,7 @@
 .login-footer{
     display: flex;
     width: 90%;
-    margin-left: 5%;
-    margin-top: 1vh;
+    margin-top: calc(20px + 1vw);
     align-items: center;
     justify-content: space-between;
 }
@@ -91,4 +94,18 @@
     color: $darkermain;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
+}
+.login-message{
+    color: white;
+}
+
+@media screen and (max-width: 1080px) {
+    .login-box {
+        width: 50vw;
+    }
+}
+@media screen and (max-width: 680px) {
+    .login-box {
+        width: 80vw;
+    }
 }
