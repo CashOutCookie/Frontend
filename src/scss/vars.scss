@@ -1,0 +1,47 @@
+@import url('https://fonts.cdnfonts.com/css/gilroy-bold');
+
+//fonts
+$regular: 'Gilroy-Regular', sans-serif;
+$bold: 'Gilroy-Bold', sans-serif;
+$heavy: 'Gilroy-Heavy', sans-serif;
+
+//colours
+$bg: #F2F5FA;
+$darkbg: #222222;
+$bluebg: #32374B;
+
+$main: #FF94C9;
+$darkmain: #FF3D93;
+$disabledbtn: #ffbcdd;
+
+// functions
+@mixin headtext(){
+    font-family: $bold;
+    color: white;
+    margin-top: 5vh;
+    font-size: calc(1.5vw + 20px);
+  }
+
+@mixin formbutton(){
+    width: 40%;
+    height: 5.2vh;
+    font-size: calc(.5vw + 15px);
+    margin-top: 8vh;
+    color: white;
+    font-family: $bold;
+    border-radius: calc(1px + 10px);
+    outline: none;
+    border: none;
+    &:enabled{
+        background: $main;
+        cursor: pointer;
+    }
+    &:hover{
+        background: $darkmain;
+        transition: all 0.3s ease-in-out;
+    }
+    &:disabled{
+        background: $disabledbtn;
+        cursor: default;
+    }
+  }
