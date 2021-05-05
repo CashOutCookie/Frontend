@@ -22,9 +22,9 @@ $disabledbtn: #ffbcdd;
     font-size: calc(1.5vw + 20px);
   }
 
-@mixin formbutton(){
-    width: 40%;
-    height: 5.2vh;
+@mixin formbutton($height, $width){
+    width: $width;
+    height: $height;
     font-size: calc(.5vw + 15px);
     margin-top: 8vh;
     color: white;

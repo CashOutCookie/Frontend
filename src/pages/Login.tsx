@@ -3,6 +3,8 @@ import { Redirect } from 'react-router-dom';
 import '../scss/login.scss';
 import Navbar from './Components/Navbar';
 
+import PasswordReset from './Components/PasswordReset'
+
 const Register = () => {
     return(
         <>
@@ -11,6 +13,8 @@ const Register = () => {
 }
 
 const Login = () => {
+
+    const [modalIsOpen, setModalIsOpen] = useState(false);
 
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
@@ -43,25 +47,35 @@ const Login = () => {
             })
     }
 
+    const open_modal = () => {
+        setModalIsOpen(true)
+    }
+    
+    const close_modal = () => {
+        setModalIsOpen(false)
+    }
+
+
     if (!isLoggedIn) {
         return (
             <>
-                <div className="main">
+                <div className="login-main">
                     <h1>Login</h1>
-                    <div className="box">
+                    <div className="login-box">
                         <form onSubmit={handleLogin}>
                             <p>Username or Email</p>
                             <input onChange={e => setUsername(e.target.value)}></input>
-                            <p className="passwordinput-text">Password</p>
+                            <p className="login-passwordhead">Password</p>
                             <input onChange={e => setPassword(e.target.value)} type="password"></input>
                             <button type="submit" disabled={(!username || !password ? true: false)}>Login</button>
                         </form>
-                        <div className="footer">
+                        <div className="login-footer">
                             <p>Don't have an account?</p>
-                            <p>Forgot password?</p>
+                            <p onClick={open_modal} className="forgotpassword-btn">Forgot your password?</p>
+                            {modalIsOpen ? <PasswordReset setModalIsOpen={close_modal} /> : null}
                         </div>
                     </div>
-                    <p className="info-message">{message}</p>
+                    <p className="login-info-message">{message}</p>
                 </div>
             </>
         )
