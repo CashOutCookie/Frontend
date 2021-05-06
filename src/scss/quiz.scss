@@ -1,0 +1,21 @@
+@import 'vars.scss';
+
+.question {
+    color: $main;
+    font-family: $bold;
+    margin-left: 3vw;
+    font-size: calc(15px + 2vw);
+}
+.timer {
+    width: 50vw;
+    height: calc(20px + 1.2vh);
+    margin-left: 3vw;
+    background: white;
+    border-radius: 100vw;
+}
+.slider {
+    width: 70%;
+    height: calc(20px + 1.2vh);
+    border-radius: 100vw;
+    background: linear-gradient(90deg, #FF94C9 0%, #8FB4FF 100%);
+}

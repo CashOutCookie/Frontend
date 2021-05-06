@@ -1,11 +1,11 @@
 @import 'vars.scss';
 
-.app-heading {
-    color: white;
-    font-family: $bold;
-    font-size: 1.8rem;
-    margin-top: 7.1vh;
-}
+// .app-heading {
+//     color: white;
+//     font-family: $bold;
+//     font-size: 1.8rem;
+//     margin-top: 7.1vh;
+// }
 
 .login-main {
     background: $darkbg;
@@ -26,9 +26,9 @@
     align-items: center;
     margin-top: 1vh;
     width: calc(10vw + 400px);
-    height: calc(30vh + 300px);
+    height: calc(45vh + 130px);
     background: $bluebg;
-    border-radius: calc(.4vw + 8px);
+    border-radius: calc(.5vw + 15px);
 }
 .login-box > form {
     margin-top: 8%;
@@ -47,7 +47,7 @@
     margin-top: 5vh;
 }
 .login-box > form > input {
-    height: calc(1.3vw + 25px);
+    height: calc(1.5vw + 15px);
     width: 85%;
     border-radius: calc(.2vw + 10px);
     border: none;
@@ -77,7 +77,7 @@
 }
 .login-footer > p {
     color: $main;
-    font-size: calc(.6vw + 8px);
+    font-size: calc(.5vw + 7px);
     transition: .2s;
     &:hover{
         color: $darkmain;
@@ -98,4 +98,26 @@
     .login-box > form > button {
         width: 60%;
     }
+}
+
+@media screen and (max-width: 680px) {
+    .login-box {
+        width: 80vw;
+    }
+    .login-box > form > button {
+        width: 60%;
+    }
+}
+
+@media screen and (max-height: 600px) and (min-width: 1025px){
+    .login-emailhead{
+        margin-top: 0%;
+    }
+    .login-passwordhead{
+        margin-top: 2%;
+    }
+    .login-box > form > button{
+        margin-top: 6%;
+    }
+     
 }

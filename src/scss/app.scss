@@ -45,7 +45,7 @@
 .app-heading {
     color: white;
     font-family: $bold;
-    font-size: 1.8rem;
+    font-size: calc(10px + 2vw);
     margin: 0;
     margin-top: 7.1vh;
     margin-left: 3vw;
@@ -76,6 +76,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: $bold;
+    font-size: calc(8px + 2vw);
 }
 .rank-balance-div{
     margin-left: 3vw;

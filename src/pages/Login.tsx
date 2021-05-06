@@ -19,7 +19,7 @@ const Login = () => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [message, setMessage] = useState('')
-    const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('token') ? false : false)
+    const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('token') ? true : false)
 
     const handleLogin = (event) => {
         event.preventDefault()
@@ -63,7 +63,7 @@ const Login = () => {
                     <h1>Login</h1>
                     <div className="login-box">
                         <form onSubmit={handleLogin}>
-                            <p>Username or Email</p>
+                            <p className="login-email">Username or Email</p>
                             <input onChange={e => setUsername(e.target.value)}></input>
                             <p className="login-passwordhead">Password</p>
                             <input onChange={e => setPassword(e.target.value)} type="password"></input>
