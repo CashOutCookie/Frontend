@@ -2,6 +2,7 @@
 @import 'vars.scss';
 * {
     outline: none;
+    -webkit-tap-highlight-color: transparent;
 }
 body {
     background-color: $bg;

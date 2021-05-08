@@ -1,6 +1,6 @@
 @import 'vars.scss';
 
-.passwordreset-main {
+.profileupdate-main {
     position: fixed; 
     z-index: 10;
     left: 0;
@@ -10,17 +10,16 @@
     background-color: rgba(0, 0, 0, 0.685);
 }
 
-.passwordreset-box{
-    padding: 10px 10px;
+.profileupdate-box{
     margin: auto;
     background-color: $bluebg;
     width: calc(20vw + 300px);
-    height: 70vh;
+    height: 80vh;
     border-radius: 20px;
     margin-top: calc(5vw + 20px);   
 }
 
-.passwordreset-close{
+.profileupdate-close{
     color: rgb(255, 255, 255);
     font-size: calc(1vw + 20px);
     font-weight: bold;
@@ -35,14 +34,12 @@
     }
 }
 
-.passwordreset-box > form > h1{
-    font-size: calc(.5vw + 15px);
+.profileupdate-box > form > h1{
+    font-size: calc(1vw + 10px);
     text-align: center;
-    margin-top: calc(30vh - 80px);
-    margin-bottom: 50px;
 }
 
-.passwordreset-box > form{
+.profileupdate-box > form{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,9 +47,10 @@
 }
 
 form > input{
-    height: calc(1.3vw + 25px);
+    height: calc(1.5vw + 15px);
     width: 85%;
-    border-radius: calc(.2vw + 10px);
+    margin-top: 30px;
+    border-radius: calc(.5vw + 5px);
     border: none;
     font-size: 18px;
     padding-left: 12px;
@@ -63,19 +61,12 @@ form > input{
     }  
 }
 
-.passwordreset-box > form > button{
-    @include formbutton(calc(2vh + 30px), calc(15vw + 60px))
-}
-
-.passwordreset-info-message{
-    color: $bg;
-    margin-top: 10%;
-    font-size: calc(.5vw + 12px);
-    text-align: center;
+.profileupdate-box > form > button{
+    @include formbutton(calc(2vh + 30px), calc(5vw + 80px))
 }
 
 @media screen and (max-width:450px){
-    .passwordreset-box{
-        width: 75%;
+    .profileupdate-box{
+        width: 80%;
     }
 }

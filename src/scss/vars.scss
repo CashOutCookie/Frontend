@@ -25,12 +25,11 @@ $disabledbtn: #ffbcdd;
 @mixin formbutton($height, $width){
     width: $width;
     height: $height;
-    font-size: calc(.5vw + 15px);
+    font-size: calc(.6vw + 12px);
     margin-top: 8vh;
     color: white;
     font-family: $bold;
     border-radius: calc(1px + 10px);
-    outline: none;
     border: none;
     &:enabled{
         background: $main;
