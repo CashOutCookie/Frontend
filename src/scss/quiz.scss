@@ -14,7 +14,8 @@
     border-radius: 100vw;
 }
 .slider {
-    width: 70%;
+    width: 100%;
+    transition: all 0.3s;
     height: calc(20px + 1.2vh);
     border-radius: 100vw;
     background: linear-gradient(90deg, #FF94C9 0%, #8FB4FF 100%);

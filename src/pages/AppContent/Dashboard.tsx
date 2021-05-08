@@ -19,7 +19,12 @@ function Dashboard() {
                 'Authorization': `JWT ${localStorage.getItem('token')}`,
                 'Content-Type': 'application/json'
             }
-        }).then(res => console.log(res.json()))
+        })
+        .then(res => res.json())
+        .then(json => console.log(json))
+        .catch((err) => {
+            console.log(err)
+        })
     })
 
     return(
