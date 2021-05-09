@@ -1,7 +1,7 @@
 @import 'vars.scss';
 a {
     &:hover, &:visited, &:active, &:link {
-        color: black;
+        color: #32374B;
         text-decoration: none;
     }
 }
@@ -14,19 +14,23 @@ section {
     height: 100vh;
 }
 .playnow{
-    font-family: $bold;
+    font-family: $regular;
+    font-size: 23px;
+    margin: 30px 0px;
 }
 article > h1 {
-    font-family: $bold;
+    font-family: $regular;
     font-size: 50px;
 }
 h2 {
-    font-family: $bold;
+    font-family: $regular;
+    color: #323232;
     font-size: 35px;
 }
 p {
-    font-family: $regular;
-    font-size: 20px;
+    font-family: $bold;
+    color: #4B4B4B;
+    font-size: 23px;
 }
 
 article {

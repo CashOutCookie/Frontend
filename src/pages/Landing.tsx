@@ -8,11 +8,12 @@ export const Landing:FC = () => {
             <section className="landing">
                 <Navbar />
                 <article>
-                    <h1>Play games to earn real Prizes</h1>
+                    <h1>Play Games - Earn Real Prizes</h1>
                     <h2>Yes, its that simple.</h2>
                     <p>
-                        CashoutCookie is a real life simulation of a currency referred to as Cookies. It is no way.
-                        related to a real currency but functions simlarly. The top players every month get real prizes like Discord Nitros.
+                        CashoutCookie is a real-life simulation of a currency represented as Cookies.
+                        It is in no way related to a real currency but functions in the same way.
+                        Every month, the top players receive prizes such as Discord Nitro.
                     </p>
                     <a className="playnow" href="/app">Play Now ▶</a>
                 </article>
