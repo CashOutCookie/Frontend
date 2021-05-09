@@ -4,7 +4,6 @@ import '../scss/login.scss';
 import Navbar from './Components/Navbar';
 
 import PasswordReset from './Components/PasswordReset'
-import ProfileUpdate from './Components/ProfileUpdate'
 
 const Register = () => {
     return(
@@ -54,7 +53,7 @@ const Login = () => {
     }
 
 
-    //if (!isLoggedIn) {
+    if (!isLoggedIn) {
         return (
             <>
                 <div className="login-main">
@@ -70,21 +69,21 @@ const Login = () => {
                         <div className="login-footer">
                             <p>Don't have an account?</p>
                             <p onClick={open_modal} className="forgotpassword-btn">Forgot your password?</p>
-                            {modalIsOpen ? <ProfileUpdate setModalIsOpen={close_modal} /> : null}
+                            {modalIsOpen ? <PasswordReset setModalIsOpen={close_modal} /> : null}
                         </div>
                     </div>
                     <p className="login-info-message">{message}</p>
                 </div>
             </>
         )
-    } //else {
-        //return(
-            //<>
-                //<Redirect to="/app" />
-            //</>
-        //)
-    //}
-//};
+    } else {
+        return(
+            <>
+                <Redirect to="/app" />
+            </>
+        )
+    }
+};
 
 
 const LoginContent = () => {
