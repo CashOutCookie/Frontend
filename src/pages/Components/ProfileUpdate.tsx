@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import '../../scss/profileupdate.scss'
+import uploadimage from '../../images/upload-image.svg';
 
 function ProfileUpdate(props) {
 
-    const [username, setUsername] = useState('')
-    const [image, setImage] = useState('')
-    const [bio, setBio] = useState('')
-    const [twitter, setTwitter] = useState('')
-    const [discord, setDiscord] = useState('')
-    const [location, setLocation] = useState('')
+    const [username, setUsername] = useState('Bolt')
+    const [image, setImage] = useState('https://cdn.discordapp.com/attachments/807140294764003350/840979249472733254/cat.png')
+    const [bio, setBio] = useState('hey')
+    const [twitter, setTwitter] = useState('twitter.com/ElonBolt')
+    const [discord, setDiscord] = useState('Bolt#8905')
+    const [location, setLocation] = useState('India')
 
     const handleclose = () => {
         props.setModalIsOpen(false)
@@ -27,11 +28,11 @@ function ProfileUpdate(props) {
             body: JSON.stringify({
                 bio: bio
             })
-        })   
+        })
             .then(res => res.json())
             .then(json => {
                 console.log(json)
-                
+
             })
         handleclose()
     }
@@ -41,16 +42,31 @@ function ProfileUpdate(props) {
             <div className="profileupdate-main">
                 <div className="profileupdate-box">
                     <span className="profileupdate-close" onClick={handleclose}>&times;</span>
+
                     <form onSubmit={handleSubmit}>
-                    <h1>Profile Update</h1>
-                        <input onChange={e => setImage(e.target.value)} type="file" accept="image"></input>
-                        <input onChange={e => setUsername(e.target.value)} placeholder="Username" type="username"></input>
-                        <input onChange={e => setBio(e.target.value)} placeholder="Bio" type="text"></input>
-                        <input onChange={e => setTwitter(e.target.value)} placeholder="Twitter" type="text"></input>
-                        <input onChange={e => setDiscord(e.target.value)} placeholder="Discord" type="text"></input>
-                        <input onChange={e => setLocation(e.target.value)} placeholder="Location" type="text"></input>
+                        <h1>Profile Update</h1>
+                        <div className="profileupdate-allitemsparent">
+                            <div className="profileupdate-inputarea">
+                                <p>Username</p>
+                                <input onChange={e => setUsername(e.target.value)} placeholder="Username" type="username" value={username}></input>
+                                <p>Bio</p>
+                                <textarea onChange={e => setBio(e.target.value)} placeholder="Bio" value={bio}></textarea>
+                                <p>Twitter</p>
+                                <input onChange={e => setTwitter(e.target.value)} placeholder="Twitter" type="text" value={twitter}></input>
+                                <p>Discord</p>
+                                <input onChange={e => setDiscord(e.target.value)} placeholder="Discord" type="text" value={discord}></input>
+                                <p>Location</p>
+                                <input onChange={e => setLocation(e.target.value)} placeholder="Location" type="text" value={location}></input>
+                            </div>
+                            <div className="profileupdate-imagesection">
+                                <img src={image} />
+                                <input id="profileupdate-hiddeninput" type="file" />
+                                <label htmlFor="profileupdate-hiddeninput"><img src={uploadimage} /></label>
+                            </div>
+                        </div>
                         <button type="submit" disabled={(username || bio || twitter || discord || location || image ? false : true)}>Save</button>
                     </form>
+
                 </div>
 
             </div>

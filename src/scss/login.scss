@@ -41,13 +41,14 @@
     align-self: flex-start;
     margin-left: 8%;
     font-family: $bold;
+    color: white;
     font-size: calc(.5vw + 12px);
 }
 .login-passwordhead{
     margin-top: 5vh;
 }
 .login-box > form > input {
-    height: calc(1.5vw + 15px);
+    height: calc(1vw + 22px);
     width: 85%;
     border-radius: calc(.2vw + 10px);
     border: none;
@@ -59,14 +60,11 @@
         border: 2px solid $main;
     }
 }
-
 .login-box > form > button {
-    @include formbutton(calc(4vh + 5px), 40%)
+    @include formbutton(calc(2vh + 20px), 40%)
 }
 
-.login-box > form > p {
-    color: white;
-}
+
 .login-footer{
     display: flex;
     width: 90%;
@@ -95,9 +93,6 @@
     .login-box {
         width: 80vw;
     }
-    .login-box > form > button {
-        width: 60%;
-    }
 }
 
 @media screen and (max-width: 680px) {
@@ -106,6 +101,10 @@
     }
     .login-box > form > button {
         width: 60%;
+    }
+    .login-box > form > input {
+        height: calc(1.5vw + 20px);
+        width: 80%;
     }
 }
 
@@ -120,4 +119,10 @@
         margin-top: 6%;
     }
      
+}
+
+@media screen and (max-width: 400px){
+    .login-footer > p{
+        font-size: 11px;
+    }
 }

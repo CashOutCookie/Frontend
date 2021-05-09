@@ -11,7 +11,7 @@ $darkbg: #222222;
 $bluebg: #32374B;
 
 $main: #FF94C9;
-$darkmain: #FF3D93;
+$darkmain: #ff7bb6;
 $disabledbtn: #ffbcdd;
 
 // functions
@@ -30,7 +30,7 @@ $disabledbtn: #ffbcdd;
     color: white;
     font-family: $bold;
     border-radius: calc(1px + 10px);
-    border: none;
+    transition: .2s;
     &:enabled{
         background: $main;
         cursor: pointer;

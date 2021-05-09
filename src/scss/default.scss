@@ -3,11 +3,18 @@
 * {
     outline: none;
     -webkit-tap-highlight-color: transparent;
+    border:none;
 }
 body {
     background-color: $bg;
     margin: 0 auto;
     box-sizing: border-box;
+}
+input{
+    font-family: $regular
+}
+textarea{
+    font-family: $regular
 }
 
 // App

@@ -4,6 +4,7 @@ import '../scss/login.scss';
 import Navbar from './Components/Navbar';
 
 import PasswordReset from './Components/PasswordReset'
+import ProfileUpdate from './Components/ProfileUpdate'
 
 const Register = () => {
     return(
@@ -23,8 +24,6 @@ const Login = () => {
 
     const handleLogin = (event) => {
         event.preventDefault()
-        console.log(username, password)
-        setMessage('Trying to log in...')
         fetch('http://localhost:8000/login/', {
             method: 'POST',
             headers: {
@@ -37,7 +36,6 @@ const Login = () => {
         })
             .then(res => res.json())
             .then(json => {
-                console.log(json)
                 if (json.user && json.user.username) {
                     localStorage.setItem('token', json.token)
                     setIsLoggedIn(true)
@@ -56,7 +54,7 @@ const Login = () => {
     }
 
 
-    if (!isLoggedIn) {
+    //if (!isLoggedIn) {
         return (
             <>
                 <div className="login-main">
@@ -72,21 +70,21 @@ const Login = () => {
                         <div className="login-footer">
                             <p>Don't have an account?</p>
                             <p onClick={open_modal} className="forgotpassword-btn">Forgot your password?</p>
-                            {modalIsOpen ? <PasswordReset setModalIsOpen={close_modal} /> : null}
+                            {modalIsOpen ? <ProfileUpdate setModalIsOpen={close_modal} /> : null}
                         </div>
                     </div>
                     <p className="login-info-message">{message}</p>
                 </div>
             </>
         )
-    } else {
-        return(
-            <>
-                <Redirect to="/app" />
-            </>
-        )
-    }
-};
+    } //else {
+        //return(
+            //<>
+                //<Redirect to="/app" />
+            //</>
+        //)
+    //}
+//};
 
 
 const LoginContent = () => {
