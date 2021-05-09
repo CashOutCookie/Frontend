@@ -1,0 +1,29 @@
+@import 'vars.scss';
+
+.rules > h1 {
+    font-family: $regular;
+    font-size: 55px;
+    margin: 0 0 0 100px;
+    padding: 60px 0;
+}
+
+.section > h1 {
+    font-family: $regular;
+    font-size: 55px;
+}
+
+.section > p {
+    font-size: 25px;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    margin: 0 100px 0 100px;
+    padding: 35px 0;
+}
+.section > ul > li {
+    font-family: $bold;
+    font-size: 26px;
+    padding: 9px;
+}

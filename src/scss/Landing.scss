@@ -12,8 +12,10 @@ html, body {
 section {
     background-image: url('../images/landing-background.svg');
     height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-.playnow{
+.playnow {
     font-family: $regular;
     font-size: 23px;
     margin: 30px 0px;
