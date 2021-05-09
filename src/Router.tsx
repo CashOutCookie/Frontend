@@ -5,6 +5,8 @@ import { LoginContent } from './pages/Login';
 
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import { Landing } from './pages/Landing';
+import { Rules } from './pages/Rules';
+import { Tutorial } from './pages/Tutorial';
 
 function Router() {
   return(
@@ -15,6 +17,8 @@ function Router() {
           <Route path="/quiz" exact component={Quiz} />
           <Route path="/login" exact component={LoginContent}></Route>
           <Route path="/" exact component={Landing}></Route>
+          <Route path="/rules" exact component={Rules}></Route>
+          <Route path="/tutorial" exact component={Tutorial}></Route>
         </Switch>
       </BrowserRouter>
     </div>
