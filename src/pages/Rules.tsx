@@ -7,7 +7,7 @@ export const Rules = () => {
         <>
             <section className="rules">
                 <Navbar />
-                <section className="rules">
+                <article>
                     <div className="section">
                         <h1>An Introduction</h1>
                         <p>
@@ -24,7 +24,7 @@ export const Rules = () => {
                             <li>d</li>
                         </ul>
                     </div>
-                </section>
+                </article>
             </section>
         </>
     )
