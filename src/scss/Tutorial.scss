@@ -1,0 +1,21 @@
+@import 'vars.scss';
+
+.tutorial-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.item {
+    padding: 45px 0;
+}
+
+.item > ul > a {
+    font-family: $regular;
+    font-size: 26px;
+    text-decoration: underline;
+}
+
+.item > h1 {
+    font-family: $regular;
+    font-size: 40px;
+}
