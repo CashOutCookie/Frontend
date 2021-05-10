@@ -11,7 +11,7 @@ body {
     background-color: $bg;
     margin: 0 auto;
     box-sizing: border-box;
-    overflow: hidden
+    overflow-x: hidden;
 }
 input{
     font-family: $regular
@@ -19,7 +19,3 @@ input{
 textarea{
     font-family: $regular
 }
-section {
-    overflow: scroll;
-}
-
