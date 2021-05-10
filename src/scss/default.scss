@@ -19,3 +19,9 @@ input{
 textarea{
     font-family: $regular
 }
+
+section {
+    background-image: url('../images/landing-background.svg');
+    height: 100vh;
+    overflow-x: hidden;
+}

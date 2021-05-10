@@ -1,10 +1,5 @@
 @import 'vars.scss';
 
-.rules{
-    background-image: url('../images/landing-background.svg');
-    height: 100vh;
-    overflow-y: scroll;
-}
 .rules article > h1 {
     font-family: $regular;
     font-size: 52px;
