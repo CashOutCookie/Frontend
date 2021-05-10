@@ -1,7 +1,7 @@
 import Dashboard from './AppContent/Dashboard'
 import { QuizContent } from './AppContent/Quiz'
 import { Notifications } from './AppContent/Notifications'
-import { Ctf } from './AppContent/Ctf'
+import { CtfContent } from './AppContent/Ctf'
 import { LogoutPage } from './AppContent/Logout'
 
 const Content = ({ pageName }) => {
@@ -11,10 +11,10 @@ const Content = ({ pageName }) => {
         return <Notifications />
     } else if (pageName === 'Quiz') {
         return <QuizContent />
+    } else if (pageName === 'CTF') {
+        return <CtfContent />
     } else if (pageName === 'Logout') {
         return <LogoutPage />
-    } else {
-        return <></>
     }
 }
 

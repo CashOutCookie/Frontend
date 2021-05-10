@@ -3,7 +3,7 @@
 .rules{
     background-image: url('../images/landing-background.svg');
     height: 100vh;
-    overflow-x: scroll;
+    overflow-y: scroll;
 }
 .rules article > h1 {
     font-family: $regular;

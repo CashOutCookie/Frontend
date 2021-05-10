@@ -12,7 +12,7 @@ function SidebarIcons({ onChange }) {
         document.querySelector('.side-active').classList.remove('side-active')
         document.querySelector(`.${page}-icon`).classList.add('side-active')
         if (page === 'Dashboard') {
-            onChange(page, Dashboard)
+            onChange(page)
         } else {
             onChange(page)
         }
