@@ -6,15 +6,16 @@ import en from 'javascript-time-ago/locale/en'
 import Loading from '../../animations/loading.json'
 import '../../scss/Notifications.scss'
 
-TimeAgo.addDefaultLocale(en)
 
 
 const Notifications = () => {
+
     const [loading, setLoading] = useState(true)
     const [wasError, setWasError] = useState(false)
     const [notifications, setNotifications] = useState([])
-
+    
     useEffect(() => {
+        TimeAgo.addLocale(en)
             fetch(`http://localhost:8000/notifications`, {
                 method: 'GET',
                 headers: {
@@ -27,7 +28,7 @@ const Notifications = () => {
             .then((json) => {
                 console.log(json)
                 setNotifications(json)
-                setLoading(false)
+                setTimeout(setLoading, 2000, false)
             })
             .catch((err) => {
                 console.log(err)
@@ -44,7 +45,7 @@ const Notifications = () => {
     } else if (wasError) {
         localStorage.removeItem('token')
         return <Redirect to="/login" />
-    } else {
+    } else if (notifications[0]) {
         let elements = []
         notifications.forEach(notification => {
             const timeAgo = new TimeAgo('en-US')
@@ -70,6 +71,12 @@ const Notifications = () => {
         return(
             <>
                 {elements}
+            </>
+        )
+    } else {
+        return(
+            <>
+            <p className="no-new-notifs">No new notifications right now</p>
             </>
         )
     }

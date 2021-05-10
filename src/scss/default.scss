@@ -1,5 +1,7 @@
 // Default stuff for all pages
 @import 'vars.scss';
+@import 'app.scss';
+
 * {
     outline: none;
     -webkit-tap-highlight-color: transparent;
@@ -17,6 +19,7 @@ input{
 textarea{
     font-family: $regular
 }
+section {
+    overflow: scroll;
+}
 
-// App
-@import 'app.scss';

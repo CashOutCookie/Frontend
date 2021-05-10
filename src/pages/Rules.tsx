@@ -6,7 +6,7 @@ export const Rules = () => {
     return (
         <>
             <section className="rules">
-                <Navbar />
+            <Navbar />
                 <article>
                     <div className="section">
                         <h1>An Introduction</h1>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { RedirectIfNotLoggedIn } from './Components/CheckLogin'
 import '../scss/default.scss'
 import Navbar from './Components/Navbar'
 import SidebarIcons from './Components/SidebarIcons'
@@ -15,6 +16,7 @@ function App() {
 
     return(
         <div>
+            <RedirectIfNotLoggedIn />
             <Navbar />
             <div className="app-body">
                 <div className="sidebar">
