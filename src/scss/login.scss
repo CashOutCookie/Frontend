@@ -61,7 +61,7 @@
     }
 }
 .login-box > form > button {
-    @include formbutton(calc(2vh + 20px), 40%)
+    @include formbutton(calc(2vh + 22px), 38%)
 }
 
 
@@ -100,7 +100,7 @@
         width: 80vw;
     }
     .login-box > form > button {
-        width: 60%;
+        width: 45%;
     }
     .login-box > form > input {
         height: calc(1.5vw + 20px);
@@ -116,7 +116,7 @@
         margin-top: 2%;
     }
     .login-box > form > button{
-        margin-top: 6%;
+        margin-top: 10%;
     }
      
 }
