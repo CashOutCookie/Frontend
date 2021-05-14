@@ -57,13 +57,11 @@ const Notifications = () => {
                     <div className="notif-type">
                         <p>{notification.type}</p>
                     </div>
-                    <div className="notif-descp">
+                    <div className="notif-desc">
                         <p>{notification.description}</p>
                     </div>
                     <div className="notif-time">
-                        <div className="time-div">
-                            <p>{notifTime}</p>
-                        </div>
+                        <p>{notifTime}</p>
                     </div>
                 </div>
             )

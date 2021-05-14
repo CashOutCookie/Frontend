@@ -1,67 +1,75 @@
 @import 'vars.scss';
 
-.notification-flex p {
-    font-family: $regular;
-    font-size: calc(10px + 0.5vw);
-}
-
 .notification-flex {
+    display: flex;
     width: calc(100px + 40vw);
     height: 9vh;
     margin-left: 3vw;
     background: $bg;
-    border-radius: calc(3px + 0.7vw);
-    display: flex;
-    align-items: flex-start;
     margin-top: 4vh;
-    overflow: hidden;
-    outline: none;
-    border: none;
+    border-top-left-radius: calc(.8vw + 20px);
+    border-bottom-left-radius: calc(.8vw + 20px);
+    border-bottom-right-radius: calc(.8vw + 20px);
+    border-top-right-radius: calc(.8vw + 10px);
+    transition: .2s;
+    cursor: default;
+    &:hover{
+        background-color: rgb(207, 207, 207);
+    }
 }
 
 .notif-type {
-    width: 30%;
-    height: 100%;
-    z-index: 99;
-    border-radius: 0px 0px calc(18px + 1vw) 0px;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: $bluebg;
+    border-top-left-radius: calc(.8vw + 6px);
+    border-bottom-left-radius: calc(.8vw + 6px);
+    border-bottom-right-radius: calc(1.2vw + 25px);
 }
 
-.notif-descp {
+.notif-desc {
+    display: sticky;
     width: 50%;
-    text-align: center;
+    overflow: auto;
 }
 
 .notif-time{
-    width: 20%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: flex-end;
-}
-
-.time-div {
+    width: 30%;
     height: 50%;
-    width: 100%;
-    border-radius: 1vw 0px 0px 0px;
-    background: $bluebg;
     display: flex;
-    align-items: center;
+    margin-top: auto;
     justify-content: center;
+    align-items: center;
+    background: $bluebg;
+    border-top-left-radius: calc(.8vw + 6px);
+    border-bottom-right-radius: calc(.8vw + 6px);
 }
 
-.time-div p {
-    color: $main;
+
+.notification-flex > div > p{
     text-align: center;
-    font-size: calc(10px + 0.1vw);
 }
-
 .notif-type p {
     color: white;
-    text-align: center;
+    font-size: calc(1vw + 8px);
+    padding: 5px 5px;
 }
-
+.notif-desc p{
+    font-size: calc(.4vw + 8px);
+}
+.notif-time p {
+    color: $main;
+    font-size: calc(.5vw + 5px)
+}
 .no-new-notifs {
     margin-left: 3vw;
+    color: rgb(170, 170, 170);
+}
+
+@media screen and (max-width: 600px){
+    .notification-flex{
+        width: 80vw;
+    }
 }
