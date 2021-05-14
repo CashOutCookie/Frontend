@@ -9,40 +9,84 @@ import '../../scss/quiz.scss'
 
 const QuizContent = () => {
 
+    const [questionNumber, setQuestionNumber] = useState(0)
+    const [throttled, setThrottled] = useState(0)
     const [question, setQuestion] = useState('')
-    const [didAnswer, setDidAnswer] = useState(false)
-    const [options, setOptions] = useState('')
+    const [answer, setAnswer] = useState('')
+    const [options, setOptions] = useState()
     const [timer, setTimer] = useState(15)
 
-    
+    const OptionElement = () => {
+        if (questionNumber !== 0) {
+            return(
+                <>
+                    {// @ts-ignore
+                    options.map(option => (
+                        <div onClick={() => {
+                            setAnswer(option)
+                        }} className="options">
+                            <p>{
+                            // @ts-ignore
+                                option
+                            }</p>
+                        </div>
+                    ))}
+                </>
+            )
+        } else {
+            return <></>
+        }
+    }
 
     useEffect(() => {
-        const socket = new WebSocket(`ws://localhost:8000/quiz/?token=${localStorage.getItem('token')}`)
+        const socket = new WebSocket(`ws://localhost:8000/quiz/`)
+        socket.onopen = () => {
+            socket.send(JSON.stringify({ 
+                "type": "auth",
+                "jwt": localStorage.getItem('token') 
+            }))
+            if (answer) {
+                socket.send(JSON.stringify({
+                    "type": "quiz",
+                    "answer": answer
+                }))
+                setAnswer('')
+            }
+        }
         socket.onmessage = (event) => {
             let data = JSON.parse(event.data)
             console.log(data);
             if (data.question) {
                 setQuestion(data.question)
-                // setOptions(data.options)
-            } else if (data.timer) {
-                setTimer((15 - Number(data.timer)) * 100)
+                setOptions(data.options)
+                setQuestionNumber(questionNumber + 1)
+            } else if (data.throttle) {
+                console.log('Throttled')
+                setThrottled(data.throttle)
             }
         }
-    }, [setQuestion, setOptions, setTimer, timer])
+    }, [setQuestion, setOptions, setAnswer, questionNumber, answer, ])
 
-    return(
-        <div>
-            <h1 className="question">{decode(question)}</h1>
-            <div className="timer">
-                <div className="slider" style={{
-                    width: `${timer}%`
-                }}></div>
+
+    if (throttled === 0) {
+        return(
+            <div>
+                <h1 className="question">{`${questionNumber}.`} {decode(question)}</h1>
+                <div className="timer">
+                    <div className="slider" style={{
+                        width: `${(timer/15) * 100}%`
+                    }}></div>
+                </div>
+                <OptionElement />
             </div>
-            {/* {options.forEach(option => {
-               <div className="options"></div> 
-            })} */}
-        </div>
-    )
+        )
+    } else {
+        return (
+            <>
+                <p>{throttled}</p>
+            </>
+        )
+    }
 }
 
 function Quiz() {

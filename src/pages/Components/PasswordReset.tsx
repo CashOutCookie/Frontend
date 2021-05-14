@@ -24,7 +24,7 @@ function PasswordReset(props) {
         })   
             .then(res => res.json())
             .then(json => {
-                if(json==="Password reset link sent to your email!"){
+                if(json === "Password reset link sent to your email!"){
                     setMessage(json)
                 }else{
                     setMessage("There are no accounts registered with this email.")
@@ -38,7 +38,7 @@ function PasswordReset(props) {
             <div className="passwordreset-main">
                 <div className="passwordreset-box">
                     <span className="passwordreset-close" onClick={handleclose}>&times;</span>
-                    <form onSubmit={handleEmail}>
+                    <form className="password-reset" onSubmit={handleEmail}>
                     <h1>Enter your email where we can send you instructions to reset your password</h1>
                         <input onChange={e => setEmail(e.target.value)} placeholder="Email" type="email"></input>
                         <button type="submit" disabled={(!email ? true : false)}>Send Email</button>
