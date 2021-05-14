@@ -61,7 +61,10 @@
 
 
 //  Dashboard
-
+.dash-overflow {
+    height: max-content;
+    overflow-y: scroll;
+}
 .dash-flex{
     display: flex;
     margin-top: 4vh;
@@ -99,6 +102,21 @@
 
 .logout-text {
     margin-left: 3vw;
+}
+.logout-button {
+    width: calc(50px + 18vw);
+    cursor: pointer;
+    border-radius: calc(4px + 0.4vw);
+    transition: 0.3s all;
+    margin-left: 3vw;
+    background: $bluebg;
+    height: 7vh;
+    font-family: $regular;
+    font-size: calc(10px + 0.5vw);
+    &:hover {
+        background: $main;
+        color: white;
+    }
 }
 
 // Media queries

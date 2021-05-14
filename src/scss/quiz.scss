@@ -4,7 +4,8 @@
     color: $main;
     font-family: $bold;
     margin-left: 3vw;
-    font-size: calc(15px + 2vw);
+    max-width: 70vw;
+    font-size: calc(10px + 1vw);
 }
 .timer {
     width: 50vw;
@@ -19,4 +20,25 @@
     height: calc(20px + 1.2vh);
     border-radius: 100vw;
     background: linear-gradient(90deg, #FF94C9 0%, #8FB4FF 100%);
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: $regular;
+    height: 10vh;
+    width: 50vw;
+    border-radius: calc(5px + 0.5vw);
+    background: $bluebg;
+    margin-top: 5vh;
+    margin-left: 3vw;
+    cursor: pointer;
+}
+
+.options p {
+    font-size: calc(10px + 0.8vw);
+    color: white;
+    text-align: center;
 }

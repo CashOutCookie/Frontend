@@ -4,16 +4,21 @@ import Navbar from '../Components/Navbar'
 import SidebarIcons from '../Components/SidebarIcons'
 import Heading from './Heading'
 import Content from '../Content'
+import Animation from '../Components/Animations'
 import '../../scss/ctf.scss'
+import Loading from '../../animations/loading.json'
+
 
 const CtfContent = () => {
     const [fetched, setFetched] = useState(false)
-    const [currentFlag, setCurrentFlag] = useState()
-    const [loading, setLoading] = useState(true)
+    const [currentFlag, setCurrentFlag] = useState('')
     const [flag, setFlag] = useState('')
+    const [message, setMessage] = useState('')
 
     const handleSubmit = (event) => {
         event.preventDefault()
+        console.log(flag)
+        setFetched(false)
         fetch('http://localhost:8000/flagscheck/', {
             method: 'POST',
             headers: {
@@ -24,6 +29,8 @@ const CtfContent = () => {
                 flag
             })
         })
+        .then(res => res.json())
+        .then(json => console.log(json))
     }
 
     useEffect(() => {
@@ -46,12 +53,33 @@ const CtfContent = () => {
         return(
             <>
             <div className="ctf-content">
-                <p>{
-                // @ts-ignore
-                currentFlag.instructions
+                <p className="ctf-instructions">{
+                    // @ts-ignore
+                    currentFlag.instructions
                 }</p>
-                <input placeholder="Your Flag Here"></input>
+                <p className="ctf-additional">{
+                    // @ts-ignore
+                    currentFlag.additional
+                }</p>
+                <img className="ctf-image" alt="" src={
+                    // @ts-ignore
+                    currentFlag.image
+                }></img>
+
+                <form onSubmit={handleSubmit}>
+                    <input required className="flag-input" placeholder="Your Flag Here" onChange={e => setFlag(e.target.value)}></input>
+                    <button type="submit">Submit</button>
+                </form>
+
             </div>
+            </>
+        )
+    } else if (!fetched) {
+        return(
+            <>
+                <div style={{ display: 'flex', alignItems: 'flex-start'}}>
+                    <Animation json={Loading} height="calc(150px + 10vw)" width="calc(150px + 10vw)" />
+                </div>
             </>
         )
     } else {

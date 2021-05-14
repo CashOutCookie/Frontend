@@ -28,11 +28,15 @@ const Notifications = () => {
             .then((json) => {
                 console.log(json)
                 setNotifications(json)
+                if (json === 'You need to be authenticated to use this API.') {
+                    setWasError(true)
+                } else if (json.detail === 'Error decoding signature.') {
+                    setWasError(true)
+                }
                 setTimeout(setLoading, 2000, false)
             })
             .catch((err) => {
                 console.log(err)
-                setWasError(true)
             })
     }, [])
 
@@ -42,7 +46,7 @@ const Notifications = () => {
                 <Animation json={Loading} height="calc(150px + 10vw)" width="calc(150px + 10vw)" />
             </div>
         ) 
-    } else if (wasError) {
+    } else if (wasError === true) {
         localStorage.removeItem('token')
         return <Redirect to="/login" />
     } else if (notifications[0]) {
