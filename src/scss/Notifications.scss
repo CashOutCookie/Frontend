@@ -30,9 +30,7 @@
 }
 
 .notif-desc {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: sticky;
     width: 50%;
     overflow: auto;
 }
