@@ -102,20 +102,22 @@
 
 .logout-text {
     margin-left: 3vw;
+    margin-right: 10px;
+    color: rgb(184, 184, 184);
 }
 .logout-button {
-    width: calc(50px + 18vw);
+    color: white;
+    width: calc(150px + 10vw);
     cursor: pointer;
     border-radius: calc(4px + 0.4vw);
     transition: 0.3s all;
     margin-left: 3vw;
     background: $bluebg;
-    height: 7vh;
+    height: calc(20px + 3vh);
     font-family: $regular;
-    font-size: calc(10px + 0.5vw);
+    font-size: calc(12px + 0.4vw);
     &:hover {
-        background: $main;
-        color: white;
+        background: $darkmain;
     }
 }
 

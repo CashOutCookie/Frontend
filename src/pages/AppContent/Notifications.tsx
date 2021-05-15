@@ -42,8 +42,8 @@ const Notifications = () => {
 
     if (loading) {
         return(
-            <div style={{ display: 'flex', alignItems: 'flex-start'}}>
-                <Animation json={Loading} height="calc(150px + 10vw)" width="calc(150px + 10vw)" />
+            <div style={{ display: 'flex', alignItems: 'flex-start', marginLeft: "calc(40px + 2.2vw)", marginTop: "50px"}}>
+                <Animation json={Loading} height="calc(18px + 8vw)" width="calc(18px + 8vw)" />
             </div>
         ) 
     } else if (wasError === true) {

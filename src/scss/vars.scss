@@ -41,6 +41,6 @@ $disabledbtn: #ffbcdd;
     }
     &:disabled{
         background: $disabledbtn;
-        cursor: default;
+        cursor: not-allowed;
     }
   }

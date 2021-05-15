@@ -14,7 +14,9 @@
     transition: .2s;
     cursor: default;
     &:hover{
-        background-color: rgb(207, 207, 207);
+        background-color: rgb(206, 206, 206);
+    }&:hover > .notif-desc p{
+        color: rgb(33, 31, 34);
     }
 }
 
@@ -30,9 +32,6 @@
 }
 
 .notif-desc {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 50%;
     overflow: auto;
 }
@@ -60,6 +59,7 @@
 }
 .notif-desc p{
     font-size: calc(.4vw + 8px);
+    transition: .2s;
 }
 .notif-time p {
     color: $main;
