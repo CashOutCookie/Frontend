@@ -53,6 +53,7 @@
 .app-content {
     width: 93vw;
     height: 89vh;
+    overflow: auto;
     border-radius: 4vh 0px 0px 0px;
     background: $darkbg;
     background-repeat: no-repeat;

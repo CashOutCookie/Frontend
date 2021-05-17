@@ -1,0 +1,82 @@
+@import 'vars.scss';
+
+.main-content {
+    margin-left: 3vw;
+    margin-top: calc(10px + 1vw);
+}
+
+.pfp {
+    max-width: calc(100px + 5vw);
+    border-radius: calc(10px + 0.3vw);
+}
+
+.left-flex-profile {
+    display: flex;
+}
+
+.profile-section-one {
+    display: flex;
+    flex-direction: column;
+}
+
+.edit-profile {
+    color: white;
+    width: calc(100px + 5vw);
+    cursor: pointer;
+    border-radius: calc(4px + 0.2vw);
+    transition: 0.3s all;
+    background: $bluebg;
+    height: calc(20px + 3vh);
+    font-family: $regular;
+    font-size: calc(12px + 0.4vw);
+    margin-top: 4vh;
+    &:hover {
+        background: $darkmain;
+    }
+}
+
+.profile-section-two {
+    display: flex;
+    flex-direction: column;
+    margin-left: 4vw;
+    width: fit-content;
+}
+
+.profile-section-two p {
+    margin: 0px;
+}
+
+#bio {
+    background: -webkit-linear-gradient(45deg, #FF94C9, #8FB4FF);
+    text-decoration: none;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.username {
+    margin-top: 0.3vh;
+    font-size: calc(10px + 1.5vw);
+    background: -webkit-linear-gradient(45deg, #FF94C9, #8FB4FF);
+    text-decoration: none;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.params {
+    display: flex;
+    color: rgb(141, 141, 141);
+    margin-top: 2vh !important;
+    font-size: calc(7px + 1vw);
+    width: max-content;
+}
+
+.value {
+    color: #FAFAFA;
+    font-size: calc(7px + 1vw);
+    margin-left: 0.5vw !important;
+}
+
+.twitter-profile {
+    color: white !important;
+    text-decoration: underline !important;
+}
