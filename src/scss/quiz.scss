@@ -28,13 +28,17 @@
     justify-content: center;
     align-items: center;
     font-family: $regular;
-    height: 10vh;
+    height: calc(50px + 4vh);
     width: 50vw;
     border-radius: calc(5px + 0.5vw);
     background: $bluebg;
     margin-top: 5vh;
     margin-left: 3vw;
     cursor: pointer;
+    transition: .2s;
+    &:hover{
+        background: #3f4661;
+    }
 }
 
 .options p {
@@ -45,4 +49,8 @@
 
 .throttle {
     margin-left: 3vw;
+    color: blue;
+}
+.throttle > p{
+    color: rgb(224, 224, 224);
 }
