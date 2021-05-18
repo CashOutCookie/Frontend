@@ -24,7 +24,7 @@ const WorkContent = () => {
                 </div>
                 <div className="second-item">
                     <div onClick={() => history.push('/ctf')} className="game-item">
-                        <Animation json={flag} height='16vw' width='16vw' />
+                        <Animation json={flag} height='20vw' width='20vw' />
                     </div>
                     <p className="gameName">Capture The Flag</p>
                 </div>
