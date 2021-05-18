@@ -1,6 +1,7 @@
 import React from 'react';
 import { App } from './pages/App';
 import { Quiz } from './pages/AppContent/Quiz'
+import { Work } from './pages/AppContent/Work'
 import { LoginContent } from './pages/Login';
 import { Ctf } from './pages/AppContent/Ctf'
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
@@ -15,6 +16,7 @@ function Router() {
         <Switch>
           <Route path="/app" exact component={App} />
           <Route path="/quiz" exact component={Quiz} />
+          <Route path="/work" exact component={Work} />
           <Route path="/ctf" component={Ctf} />
           <Route path="/login" exact component={LoginContent}></Route>
           <Route path="/" exact component={Landing}></Route>

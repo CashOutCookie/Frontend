@@ -94,9 +94,22 @@
 }
 .dash-gradients-div, .dash-gradients{
     width: 16vw;
+    cursor: pointer;
 }
 .dash-gradients-div {
     position: relative;
+}
+.profile-flex p {
+    text-align: center !important;
+}
+.rank-balance-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+}
+.rank-balance-div > .profile-flex {
+    width: 100% !important;
 }
 
 // Logout
@@ -131,6 +144,9 @@
     .app-content {
         width: 85vw;
     }
+    .rank-balance-div {
+        height: 30vh;
+    }
 }
 @media screen and (max-width: 780px) {
     .dash-gradients-div, .dash-gradients{
@@ -138,7 +154,8 @@
     }
     .rank-balance-div {
         width: 78vw;
-        height: 25vw;
+        height: 50vh;
+        height: min-content;
     }
 }
 @media screen and (min-width: 1000px) {
