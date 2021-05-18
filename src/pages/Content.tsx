@@ -1,5 +1,6 @@
 import Dashboard from './AppContent/Dashboard'
 import { WorkContent } from './AppContent/Work'
+import { BankContent } from './AppContent/Bank'
 import { QuizContent } from './AppContent/Quiz'
 import { Notifications } from './AppContent/Notifications'
 import { MyProfile } from './AppContent/MyProfile'
@@ -11,6 +12,8 @@ const Content = ({ pageName }) => {
         return <Dashboard />
     } else if (pageName === 'Work') {
         return <WorkContent />
+    } else if (pageName === 'Bank') {
+        return <BankContent />
     } else if (pageName === 'Notifications') {
         return <Notifications />
     } else if (pageName === 'Profile') {

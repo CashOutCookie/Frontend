@@ -35,3 +35,76 @@
     color: white !important;
     text-align: center;
 }
+
+.bank-content {
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    // justify-content: center;
+    margin-left: 3vw;
+    width: max-content;
+}
+
+.transfer-box {
+    background: $bluebg;
+    border-radius: calc(10px + 1vw);
+    width: calc(200px + 15vw);
+    height: calc(105px + 15vw);
+}
+
+.transfer-box p {
+    color: #FAFAFA;
+    text-align: center;
+    font-size: calc(10px + 1vw);
+    margin-bottom: 0px;
+}
+
+.transfer-box > form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 70%;
+    margin-top: 0px;
+}
+
+.transfer-box > form > input {
+    width: 80%;
+    height: 20%;
+    margin-top: 5%;
+    border-radius: calc(4px + 0.4vw);
+    padding-left: calc(5px + 0.5vw);
+    outline: none;
+    font-size: calc(7px + 0.5vw);
+    &:focus {
+        border: 1px solid $main;
+    }
+}
+
+.transfer-box > form > button {
+    border-radius: calc(4px + 0.4vw);
+    margin-top: 8%;
+    width: 50%;
+    height: 20%;
+    transition: .3s all;
+    cursor: pointer;
+    font-size: calc(7px + 0.5vw);
+    &:hover {
+        background: $main;
+    }
+}
+
+.bankBalance {
+    color: rgb(187, 187, 187);
+    font-size: calc(15px + 0.5vw);
+}
+
+.transfer-box > div {
+    width: inherit;
+}
+
+.transferMessage {
+    color: rgb(187, 187, 187);
+    font-size: calc(15px + 0.5vw);
+    max-width: 60vw;
+    margin-top: calc(20px + 1vw) !important;
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Bank } from './pages/AppContent/Bank'
 import { App } from './pages/App';
 import { Quiz } from './pages/AppContent/Quiz'
 import { Work } from './pages/AppContent/Work'
@@ -16,6 +17,7 @@ function Router() {
         <Switch>
           <Route path="/app" exact component={App} />
           <Route path="/quiz" exact component={Quiz} />
+          <Route path="/bank" exact component={Bank} />
           <Route path="/work" exact component={Work} />
           <Route path="/ctf" component={Ctf} />
           <Route path="/login" exact component={LoginContent}></Route>
