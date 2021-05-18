@@ -45,6 +45,15 @@ const MyProfile = () => {
     } else if (wasError) {
         return <Logout />
     } else {
+        // @ts-ignore
+        let rankWidth = data.rank ? Number(data.rank.split('/')[0]) : 0
+        // @ts-ignore
+        let totalWidth = data.rank ? Number(data.rank.split('/')[1]) : 0
+        
+        let actualWidth = ((totalWidth - rankWidth) / totalWidth) * 100
+
+        console.log(actualWidth, rankWidth, totalWidth)
+
         return (
             <>
                 <div className="main-content">
@@ -77,16 +86,47 @@ const MyProfile = () => {
                             }</p></p>
                             <p className="params">Twitter: <p className="value">{
                                 // @ts-ignore
-                                <a className="twitter-profile" href={`https://twitter.com`}>@putin</a>
+                                data.twitter ? <a className="twitter-profile" href={`https://twitter.com/${data.twitterusername}`}>{data.twitterusername}</a> : ''
                             }</p></p>
-                            <p className="params">Discord:</p>
+                            <p className="params">Discord: {
+                                // @ts-ignore
+                                <p className="value">{data.discord ? data.discord : ''}</p>
+                            }</p>
                             <p className="params">Joined On: <p className="value">{
                                 // @ts-ignore
                                 dateFormat(new Date(data.date_joined), "mmmm dS, yyyy")
                             }</p></p>
                         </div>
-
                     </div>
+
+                        <div className="profile-rank-card">
+
+                            <div className="profile-flex">
+                                <div className="rank-in-card">
+                                    <p className="rank-profile">Rank</p>
+                                    <p className="actual-in-card">#{
+                                        // @ts-ignore
+                                        data.rank ? data.rank : ''
+                                    }</p>
+                                </div>
+                                <div className="balance-in-card">
+                                    <p className="balance-profile">Balance</p>
+                                    <p className="actual-in-card">{
+                                        // @ts-ignore
+                                        data.balance
+                                    }</p>
+                                </div>
+                            </div>
+                                <div className="progress-profile">
+                                    <div className="slider-progress-profile" style={{
+                                        // @ts-ignore
+                                            width: `${actualWidth}%`
+                                        }}>
+                                    </div>
+                                </div>
+                        </div>
+
+
                 </div>
             </>
         )
