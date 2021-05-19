@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import dateFormat from 'dateformat'
 import { Logout } from '../Components/CheckLogin'
+import ProfileUpdate from '../Components/ProfileUpdate'
 import Animation from '../Components/Animations'
 import Loading from '../../animations/loading.json'
 import '../../scss/myprofile.scss'
 
 const MyProfile = () => {
+
+    const [modalIsOpen, setModalIsOpen] = useState(false)
     const [loading, setLoading] = useState(true)
     const [wasError, setWasError] = useState(false)
     const [data, setData] = useState()
@@ -56,6 +59,7 @@ const MyProfile = () => {
 
         return (
             <>
+            {modalIsOpen ? <ProfileUpdate setModalIsOpen={setModalIsOpen} data={data} /> : null}
                 <div className="main-content">
                     <div className="left-flex-profile">
 
@@ -64,7 +68,7 @@ const MyProfile = () => {
                                 // @ts-ignore
                                 data.image
                             } />
-                            <button onClick={() => console.log('Do stuff!')} className="edit-profile">Edit Profile</button>
+                            <button onClick={() => setModalIsOpen(true)} className="edit-profile">Edit Profile</button>
                             <p id="bio">{
                                 // @ts-ignore
                                 data.bio

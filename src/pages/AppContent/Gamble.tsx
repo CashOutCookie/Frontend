@@ -6,12 +6,12 @@ import SidebarIcons from '../Components/SidebarIcons'
 import Heading from './Heading'
 import Content from '../Content'
 
-const BankContent = () => {
+const GambleContent = () => {
 
     const [balance, setBalance] = useState('')
     const [accountNumber, setAccountNumber] = useState('')
     const [amount, setAmount] = useState('')
-    const [message, setMessage] = useState('Transaction history and deposits coming soon...')
+    const [message, setMessage] = useState('')
     const [loading, setLoading] = useState(true)
     const [wasError, setWasError] = useState(false)
 
@@ -42,22 +42,19 @@ const BankContent = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        fetch('http://localhost:8000/transfer/', {
+        fetch('http://localhost:8000/gamble/', {
             method: 'POST',
             headers: {
                 'Authorization': `JWT ${localStorage.getItem('token')}`,
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                to_user: accountNumber,
                 amount: amount,
-                description: 'Transfer'
             })
         })
         .then(res => res.json())
         .then(json => {
             setMessage(json)
-            setBalance((Number(balance) - Number(amount)).toString())
         })
     }
 
@@ -70,12 +67,11 @@ const BankContent = () => {
             <>
                 <div className="bank-content">
                     <p className="bankBalance">Your current balance is {balance}</p>
-                    <div className="transfer-box">
-                        <p>Transfer</p>
+                    <div className="transfer-box gamble">
+                        <p>Gamble</p>
                         <form onSubmit={handleSubmit}>
-                            <input required placeholder="Account Number" onChange={e => setAccountNumber(e.target.value)}></input>
                             <input required placeholder="Amount" onChange={e => setAmount(e.target.value)}></input>
-                            <button type="submit">Transfer</button>
+                            <button type="submit">Try your luck</button>
                         </form>
                     </div>
                         <p className="transferMessage">{message}</p>
@@ -86,9 +82,9 @@ const BankContent = () => {
     }
 }
 
-const Bank = () => {
+const Gamble = () => {
 
-    const [currentPage, setCurrentPage] = useState('Bank')
+    const [currentPage, setCurrentPage] = useState('Gamble')
 
     function onPageChange(pageName) {
         setCurrentPage(pageName)
@@ -113,4 +109,4 @@ const Bank = () => {
     )
 }
 
-export { Bank, BankContent }
+export { Gamble, GambleContent }

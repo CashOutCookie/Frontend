@@ -29,3 +29,26 @@
     height: 4.5vh;
     width: calc(80px + 10vw);
 }
+
+.flag-input {
+    font-size: calc(7px + 0.5vw);
+    padding-left: 10px;
+    border-radius: calc(2px + 0.4vw);
+    border: none;
+    &:focus {
+        border: 2px solid $main;
+    }
+}
+
+.flag-submit {
+    font-size: calc(7px + 0.5vw);
+    margin-top: 4vh;
+    height: calc(25px + 1vw);
+    width: calc(125px + 2vw);
+    border-radius: calc(4px + 0.4vw);
+    cursor: pointer;
+    transition: .3s all;
+    &:hover {
+        background: $main;
+    }
+}

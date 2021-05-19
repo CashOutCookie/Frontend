@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { RedirectIfNotLoggedIn } from '../Components/CheckLogin'
 import { useStopwatch } from 'react-timer-hook';
 import Countdown from 'react-countdown';
 import { decode } from 'html-entities';
@@ -143,6 +144,7 @@ function Quiz() {
 
     return(
         <>
+        <RedirectIfNotLoggedIn />
             <Navbar />
             <div className="app-body">
                 <div className="sidebar">

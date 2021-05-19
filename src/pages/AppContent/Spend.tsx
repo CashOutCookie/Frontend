@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { RedirectIfNotLoggedIn } from '../Components/CheckLogin'
 import Animation from '../Components/Animations'
-import quiz from '../../animations/quiz.json'
-import flag from '../../animations/flag.json'
+import gamble from '../../animations/gamble.json'
+import lottery from '../../animations/lottery.json'
 import Navbar from '../Components/Navbar'
 import SidebarIcons from '../Components/SidebarIcons'
 import Heading from './Heading'
@@ -11,23 +11,23 @@ import Content from '../Content'
 import '../../scss/games.scss'
 
 
-const WorkContent = () => {
+const SpendContent = () => {
     let history = useHistory()
     return(
         <>
         <div className="games-parent">
             <div className="games">
                 <div className="first-item">
-                    <div onClick={() => window.location.href = '/quiz'} className="game-item">
-                        <Animation json={quiz} height='16vw' width='16vw' />
+                    <div onClick={() => window.location.href = '/lottery'} className="game-item">
+                        <Animation json={lottery} height='20vw' width='20vw' />
                     </div>
-                    <p className="gameName">Quiz</p>
+                    <p className="gameName">Lottery</p>
                 </div>
                 <div className="second-item">
-                    <div onClick={() => history.push('/ctf')} className="game-item">
-                        <Animation json={flag} height='20vw' width='20vw' />
+                    <div onClick={() => history.push('/gamble')} className="game-item">
+                        <Animation json={gamble} height='16vw' width='16vw' />
                     </div>
-                    <p className="gameName">Capture The Flag</p>
+                    <p className="gameName">Gamble</p>
                 </div>
             </div>
         </div>
@@ -35,9 +35,9 @@ const WorkContent = () => {
     )
 }
 
-const Work = () => {
+const Spend = () => {
 
-    const [currentPage, setCurrentPage] = useState('Work')
+    const [currentPage, setCurrentPage] = useState('Spend')
 
     function onPageChange(pageName) {
         setCurrentPage(pageName)
@@ -62,4 +62,4 @@ const Work = () => {
     )
 }
 
-export { Work, WorkContent }
+export { Spend, SpendContent }

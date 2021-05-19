@@ -53,15 +53,15 @@ function Dashboard() {
             <div className="dash-overflow">
     
                 <div className="dash-flex">
-                    <div onClick={() => history.push('/bank')} className="dash-gradients-div">
+                    <div onClick={() => window.location.href = '/bank'} className="dash-gradients-div">
                         <h1 className="dash-items">Bank</h1>
                         <img className="dash-gradients" alt="" src={bankGradient} />
                     </div>
-                    <div onClick={() => history.push('/work')} className="dash-gradients-div">
+                    <div onClick={() => window.location.href = '/work'} className="dash-gradients-div">
                         <h1 className="dash-items">Work</h1>
                         <img className="dash-gradients" alt="" src={workGradient} />
                     </div>
-                    <div onClick={() => history.push('/spend')} className="dash-gradients-div">
+                    <div onClick={() => window.location.href = '/spend'} className="dash-gradients-div">
                         <h1 className="dash-items">Spend</h1>
                         <img className="dash-gradients" alt="" src={spendGradient} />
                     </div>

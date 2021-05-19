@@ -50,6 +50,7 @@ const CtfContent = () => {
     }, [setCurrentFlag])
 
     if (fetched) {
+        console.log(`Your first flag: 2OA2uBoIqsVJgN9f`)
         return(
             <>
             <div className="ctf-content">
@@ -68,7 +69,7 @@ const CtfContent = () => {
 
                 <form onSubmit={handleSubmit}>
                     <input required className="flag-input" placeholder="Your Flag Here" onChange={e => setFlag(e.target.value)}></input>
-                    <button type="submit">Submit</button>
+                    <button className="flag-submit" type="submit">Submit</button>
                 </form>
 
             </div>
@@ -77,8 +78,8 @@ const CtfContent = () => {
     } else if (!fetched) {
         return(
             <>
-                <div style={{ display: 'flex', alignItems: 'flex-start'}}>
-                    <Animation json={Loading} height="calc(150px + 10vw)" width="calc(150px + 10vw)" />
+                <div style={{ display: 'flex', alignItems: 'flex-start', marginLeft: "calc(40px + 2.2vw)", marginTop: "50px"}}>
+                    <Animation json={Loading} height="calc(18px + 8vw)" width="calc(18px + 8vw)" />
                 </div>
             </>
         )
