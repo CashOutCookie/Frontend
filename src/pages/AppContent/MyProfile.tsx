@@ -69,11 +69,8 @@ const MyProfile = () => {
                                 data.image
                             } />
                             <button onClick={() => setModalIsOpen(true)} className="edit-profile">Edit Profile</button>
-                            <p id="bio">{
-                                // @ts-ignore
-                                data.bio
-                            }</p>
                         </div>
+                            
 
                         <div className="profile-section-two">
                             <p className="username">{
@@ -90,7 +87,7 @@ const MyProfile = () => {
                             }</p></p>
                             <p className="params">Twitter: <p className="value">{
                                 // @ts-ignore
-                                data.twitter ? <a className="twitter-profile" href={`https://twitter.com/${data.twitterusername}`}>{data.twitterusername}</a> : ''
+                                data.twitterusername ? <a className="twitter-profile" href={`https://twitter.com/${data.twitterusername}`}>{data.twitterusername}</a> : ''
                             }</p></p>
                             <p className="params">Discord: {
                                 // @ts-ignore
@@ -102,33 +99,41 @@ const MyProfile = () => {
                             }</p></p>
                         </div>
                     </div>
+                    
 
-                        <div className="profile-rank-card">
+                    <div className="profile-down-flex">
+                        <p id="bio">{
+                                    // @ts-ignore
+                                    data.bio
+                                }</p>
+                        
+                            <div className="profile-rank-card">
 
-                            <div className="profile-flex">
-                                <div className="rank-in-card">
-                                    <p className="rank-profile">Rank</p>
-                                    <p className="actual-in-card">#{
-                                        // @ts-ignore
-                                        data.rank ? data.rank : ''
-                                    }</p>
-                                </div>
-                                <div className="balance-in-card">
-                                    <p className="balance-profile">Balance</p>
-                                    <p className="actual-in-card">{
-                                        // @ts-ignore
-                                        data.balance
-                                    }</p>
-                                </div>
-                            </div>
-                                <div className="progress-profile">
-                                    <div className="slider-progress-profile" style={{
-                                        // @ts-ignore
-                                            width: `${actualWidth}%`
-                                        }}>
+                                <div className="profile-flex">
+                                    <div className="rank-in-card">
+                                        <p className="rank-profile">Rank</p>
+                                        <p className="actual-in-card">#{
+                                            // @ts-ignore
+                                            data.rank ? data.rank : ''
+                                        }</p>
+                                    </div>
+                                    <div className="balance-in-card">
+                                        <p className="balance-profile">Balance</p>
+                                        <p className="actual-in-card">{
+                                            // @ts-ignore
+                                            data.balance
+                                        }</p>
                                     </div>
                                 </div>
-                        </div>
+                                    <div className="progress-profile">
+                                        <div className="slider-progress-profile" style={{
+                                            // @ts-ignore
+                                                width: `${actualWidth}%`
+                                            }}>
+                                        </div>
+                                    </div>
+                            </div>
+                    </div>
 
 
                 </div>

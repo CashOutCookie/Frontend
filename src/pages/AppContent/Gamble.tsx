@@ -54,7 +54,11 @@ const GambleContent = () => {
         })
         .then(res => res.json())
         .then(json => {
-            setMessage(json)
+            console.log(json)
+            setMessage(json.message)
+            if (json.newBalance) {
+                setBalance(json.newBalance)
+            }
         })
     }
 
@@ -68,9 +72,9 @@ const GambleContent = () => {
                 <div className="bank-content">
                     <p className="bankBalance">Your current balance is {balance}</p>
                     <div className="transfer-box gamble">
-                        <p>Gamble</p>
+                        <p>GambleBox</p>
                         <form onSubmit={handleSubmit}>
-                            <input required placeholder="Amount" onChange={e => setAmount(e.target.value)}></input>
+                            <input type="number" required placeholder="Amount" onChange={e => setAmount(e.target.value)}></input>
                             <button type="submit">Try your luck</button>
                         </form>
                     </div>

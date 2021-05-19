@@ -8,6 +8,7 @@ import Animation from '../Components/Animations'
 import '../../scss/ctf.scss'
 import Loading from '../../animations/loading.json'
 
+localStorage.setItem('flag', '8ZCRn6UAWLiOZw0N')
 
 const CtfContent = () => {
     const [fetched, setFetched] = useState(false)
@@ -30,7 +31,11 @@ const CtfContent = () => {
             })
         })
         .then(res => res.json())
-        .then(json => console.log(json))
+        .then(json => {
+            console.log(json)
+            setMessage(json)
+            setFetched(true)
+        })
     }
 
     useEffect(() => {
@@ -43,13 +48,14 @@ const CtfContent = () => {
         })
         .then(res => res.json())
         .then(json => {
-            console.log(json)
+            console.log(fetched)
             setCurrentFlag(json)
             setFetched(true)
         })
-    }, [setCurrentFlag])
+    }, [fetched])
 
     if (fetched) {
+        console.log('https://youtu.be/oHg5SJYRHA0')
         console.log(`Your first flag: 2OA2uBoIqsVJgN9f`)
         return(
             <>
@@ -71,7 +77,8 @@ const CtfContent = () => {
                     <input required className="flag-input" placeholder="Your Flag Here" onChange={e => setFlag(e.target.value)}></input>
                     <button className="flag-submit" type="submit">Submit</button>
                 </form>
-
+                <p>{message}</p>
+                <p style={{ display: 'none' }}>Well, looks like you've found it. Here you go: TBhxquXNInkFxk56</p>
             </div>
             </>
         )

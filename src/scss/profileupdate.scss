@@ -36,9 +36,9 @@ background: $darkmain;
     margin: auto;
     background-color: $bluebg;
     width: calc(20vw + 300px);
-    height: 80vh;
+    height: 78vh;
     border-radius: 20px;
-    margin-top: calc(5vw + 20px);  
+    margin-top: calc(3vw + 15px);  
     overflow-y: scroll; 
 }
 .profileupdate-close{
@@ -96,7 +96,7 @@ form{
 .profileupdate-imagesection > label > img{
     position: absolute;
     left: 50%;
-    top: 28%;
+    top: 30%;
     transform: translate(-50%, -50%);
     width: calc(1vw + 20px);
     transition: .3s;
