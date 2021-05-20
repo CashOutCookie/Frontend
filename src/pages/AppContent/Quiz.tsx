@@ -12,7 +12,7 @@ import Loading from '../../animations/loading.json'
 import '../../scss/default.scss'
 import '../../scss/quiz.scss'
 
-const socket = new WebSocket(`ws://api.cashoutcookie.com/quiz/`)
+const socket = new WebSocket(`ws://heroku-moment.herokuapp.com/quiz/`)
 
 const QuizContent = () => {
 

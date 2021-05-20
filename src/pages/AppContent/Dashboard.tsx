@@ -13,7 +13,7 @@ function Dashboard() {
    
 
     useEffect(() => {
-        fetch('https://api.cashoutcookie.com/whoami/', {
+        fetch('https://heroku-moment.herokuapp.com/whoami/', {
             method: 'GET',
             headers: {
                 'Authorization': `JWT ${localStorage.getItem('token')}`,

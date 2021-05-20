@@ -16,7 +16,7 @@ const BankContent = () => {
     const [wasError, setWasError] = useState(false)
 
     useEffect(() => {
-        fetch('https://api.cashoutcookie.com/whoami/', {
+        fetch('https://heroku-moment.herokuapp.com/whoami/', {
             method: 'GET',
             headers: {
                 'Authorization': `JWT ${localStorage.getItem('token')}`,
@@ -42,7 +42,7 @@ const BankContent = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        fetch('https://api.cashoutcookie.com/transfer/', {
+        fetch('https://heroku-moment.herokuapp.com/transfer/', {
             method: 'POST',
             headers: {
                 'Authorization': `JWT ${localStorage.getItem('token')}`,

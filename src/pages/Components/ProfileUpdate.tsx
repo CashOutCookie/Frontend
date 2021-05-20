@@ -12,7 +12,7 @@ const ProfileInputs = ({ profileData }) => {
     const handleImageSubmit = () => {
         const formData = new FormData()
         formData.append('image', file)
-        fetch('https://api.cashoutcookie.com/profileupdate/', {
+        fetch('https://heroku-moment.herokuapp.com/profileupdate/', {
             method: 'PATCH',
             headers: {
                 // 'Content-Type': image ? 'multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' : 'application/json',
@@ -57,7 +57,7 @@ const ProfileInputs = ({ profileData }) => {
             location: location ? location : profileData.data.location,
         }
         
-        fetch('https://api.cashoutcookie.com/profileupdate/', {
+        fetch('https://heroku-moment.herokuapp.com/profileupdate/', {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',

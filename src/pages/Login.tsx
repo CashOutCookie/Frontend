@@ -31,7 +31,7 @@ const Login = () => {
             password: password
         }
 
-        fetch(`https://api.cashoutcookie.com/${platform}/`, {
+        fetch(`https://heroku-moment.herokuapp.com/${platform}/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

@@ -13,7 +13,7 @@ function PasswordReset(props) {
     const handleEmail = (event) => {
         event.preventDefault()
         setMessage('Sending password reset email...')
-        fetch('https://api.cashoutcookie.com/changepassword/', {
+        fetch('https://heroku-moment.herokuapp.com/changepassword/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
