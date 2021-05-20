@@ -12,7 +12,7 @@ import Loading from '../../animations/loading.json'
 import '../../scss/default.scss'
 import '../../scss/quiz.scss'
 
-const socket = new WebSocket(`ws://localhost:8000/quiz/`)
+const socket = new WebSocket(`ws://api.cashoutcookie.com/quiz/`)
 
 const QuizContent = () => {
 
