@@ -1,5 +1,7 @@
 import Dashboard from './AppContent/Dashboard'
+import { Rank } from './AppContent/Rank'
 import { SpendContent } from './AppContent/Spend'
+import { LotteryContent } from './AppContent/Lottery'
 import { WorkContent } from './AppContent/Work'
 import { GambleContent } from './AppContent/Gamble'
 import { BankContent } from './AppContent/Bank'
@@ -12,12 +14,16 @@ import { LogoutPage } from './AppContent/Logout'
 const Content = ({ pageName }) => {
     if (pageName === 'Dashboard') {
         return <Dashboard />
+    } else if (pageName === 'Leaderboard') {
+        return <Rank />
     } else if (pageName === 'Spend') {
         return <SpendContent />
     } else if (pageName === 'Work') {
         return <WorkContent />
     } else if (pageName === 'Bank') {
         return <BankContent />
+    } else if (pageName === 'Lottery') {
+        return <LotteryContent />
     } else if (pageName === 'Gamble') {
         return <GambleContent />
     } else if (pageName === 'Notifications') {

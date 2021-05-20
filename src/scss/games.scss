@@ -112,3 +112,44 @@
 .gamble {
     height: calc(100px + 10vw) !important;
 }
+
+.lottery-content {
+    max-width: 70vw;
+}
+
+.lottery-content p {
+    color:rgb(187, 187, 187);
+    margin-left: 3vw;
+    margin-top: 4vh;
+}
+
+.lottery-content button {
+    background: $bluebg;
+    font-size: calc(10px + 1vw);
+    border-radius: calc(4px + 0.4vw);
+    color: #FAFAFA;
+    width: calc(30px + 6vw);
+    height: calc(10px + 3vw);
+    margin-left: 0px;
+    margin-left: 1vw;
+    margin-top: 0px;
+    margin-top: 3vh;
+    &:enabled {
+        cursor: pointer;
+    }
+    &:disabled {
+        background: red;
+    }
+    &:hover:enabled {
+        background: $main;
+    }
+}
+
+.ticket-buttons {
+    margin-left: 2vw;
+}
+
+.lottery-content img {
+    max-width: calc(200px + 20vw);
+    margin-left: 3vw;
+}

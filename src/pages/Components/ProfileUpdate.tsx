@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import '../../scss/profileupdate.scss'
 import uploadimage from '../../images/upload-image.svg';
-import { profile } from 'node:console';
 
 
 const ProfileInputs = ({ profileData }) => {

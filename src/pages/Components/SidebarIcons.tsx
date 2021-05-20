@@ -4,7 +4,6 @@ import home from '../../images/home.svg'
 import logout from '../../images/logout.svg'
 import profile from '../../images/profile.svg'
 import notif from '../../images/notif.svg'
-import Dashboard from '../AppContent/Dashboard'
 
 function SidebarIcons({ onChange }) {
 

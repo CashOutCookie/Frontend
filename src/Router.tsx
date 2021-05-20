@@ -1,6 +1,10 @@
 import React from 'react';
+import { Activate } from './pages/Activate'
+import { Success } from './pages/Success'
+import { User } from './pages/AppContent/User'
 import { Bank } from './pages/AppContent/Bank'
 import { Gamble } from './pages/AppContent/Gamble'
+import { Lottery } from './pages/AppContent/Lottery'
 import { App } from './pages/App';
 import { Quiz } from './pages/AppContent/Quiz'
 import { Work } from './pages/AppContent/Work'
@@ -18,11 +22,15 @@ function Router() {
       <BrowserRouter>
         <Switch>
           <Route path="/app" exact component={App} />
+          <Route path="/activate" exact component={Activate} />
+          <Route path="/success" exact component={Success} />
+          <Route path="/user" component={User} />
           <Route path="/quiz" exact component={Quiz} />
           <Route path="/bank" exact component={Bank} />
           <Route path="/gamble" exact component={Gamble} />
           <Route path="/work" exact component={Work} />
           <Route path="/spend" exact component={Spend} />
+          <Route path="/lottery" exact component={Lottery} />
           <Route path="/ctf" component={Ctf} />
           <Route path="/login" exact component={LoginContent}></Route>
           <Route path="/" exact component={Landing}></Route>

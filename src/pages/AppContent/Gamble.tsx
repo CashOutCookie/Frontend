@@ -9,7 +9,6 @@ import Content from '../Content'
 const GambleContent = () => {
 
     const [balance, setBalance] = useState('')
-    const [accountNumber, setAccountNumber] = useState('')
     const [amount, setAmount] = useState('')
     const [message, setMessage] = useState('')
     const [loading, setLoading] = useState(true)

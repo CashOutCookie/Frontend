@@ -55,6 +55,7 @@ const CtfContent = () => {
     }, [fetched])
 
     if (fetched) {
+        console.log('https://discord.gg/KSmvMPCBeS')
         console.log('https://youtu.be/oHg5SJYRHA0')
         console.log(`Your first flag: 2OA2uBoIqsVJgN9f`)
         return(
@@ -74,8 +75,14 @@ const CtfContent = () => {
                 }></img>
 
                 <form onSubmit={handleSubmit}>
-                    <input required className="flag-input" placeholder="Your Flag Here" onChange={e => setFlag(e.target.value)}></input>
-                    <button className="flag-submit" type="submit">Submit</button>
+                    <input disabled={
+                        // @ts-ignore
+                        currentFlag.additional.includes('finding') ? true : false
+                    } required className="flag-input" placeholder="Your Flag Here" onChange={e => setFlag(e.target.value)}></input>
+                    <button disabled={
+                        // @ts-ignore
+                        currentFlag.additional.includes('finding') ? true : false
+                    } className="flag-submit" type="submit">Submit</button>
                 </form>
                 <p>{message}</p>
                 <p style={{ display: 'none' }}>Well, looks like you've found it. Here you go: TBhxquXNInkFxk56</p>

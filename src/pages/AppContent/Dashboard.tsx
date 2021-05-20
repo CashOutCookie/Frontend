@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { useHistory } from 'react-router-dom'
 import { Logout } from '../Components/CheckLogin'
 import bankGradient from '../../images/Gradients/Bank.png'
 import workGradient from '../../images/Gradients/Work.png'
@@ -11,7 +10,6 @@ function Dashboard() {
     const [data, setData] = useState()
     const [loading, setLoading] = useState(true)
     const [wasError, setWasError] = useState(false)
-    let history = useHistory();
    
 
     useEffect(() => {

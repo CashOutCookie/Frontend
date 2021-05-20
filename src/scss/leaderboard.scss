@@ -1,0 +1,23 @@
+@import 'vars.scss';
+
+.leaderboard > .notif-desc {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.leaderboard > .notif-desc > p {
+    width: 50%;
+    text-align: left;
+    margin-left: 10%;
+}
+
+.leaderboard > .notif-desc > img {
+    width: calc(20px + 1vw);
+    height: calc(20px + 1vw);
+    border-radius: calc(2px + 0.2vw);
+}
+
+.leaderboard {
+    cursor: pointer !important;
+}

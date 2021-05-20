@@ -149,3 +149,43 @@
 .profile-down-flex > .profile-rank-card {
     margin-left: 4vw;
 }
+
+.user-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.user-page {
+    margin-top: 0px;
+    margin-left: 0px;
+    height: 90vh;
+    width: 100vw;
+    background: $darkbg;
+    overflow: auto;
+}
+
+.user-profile-page {
+    justify-content: center;
+}
+
+.user-page > .main-content {
+    margin-top: 0px;
+}
+
+.user-page > .left-flex-profile {
+    margin-top: 5vh !important;
+}
+
+.user-username {
+    margin-top: 3vh !important;
+}
+
+.backButton {
+    cursor: pointer !important;
+    color: rgb(187, 187, 187) !important;
+    transition: .3s all !important;
+    &:hover {
+        color: white !important;
+    }
+}
