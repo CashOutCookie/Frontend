@@ -12,6 +12,7 @@ const MyProfile = () => {
     const [loading, setLoading] = useState(true)
     const [wasError, setWasError] = useState(false)
     const [data, setData] = useState()
+    const [message, setMessage] = useState('')
 
     useEffect(() => {
         fetch('http://localhost:8000/whoami/', {
@@ -30,13 +31,14 @@ const MyProfile = () => {
             } else {
                 console.log(json)
                 setData(json)
+                console.log(loading)
                 setTimeout(setLoading, 1000, false)
             }
         })
         .catch((err) => {
             console.log(err)
         })
-    }, [])
+    }, [loading])
     
 
     if (loading) {
@@ -59,7 +61,7 @@ const MyProfile = () => {
 
         return (
             <>
-            {modalIsOpen ? <ProfileUpdate setModalIsOpen={setModalIsOpen} data={data} /> : null}
+            {modalIsOpen ? <ProfileUpdate setModalIsOpen={setModalIsOpen} data={data} changeData={setData} changeLoading={setLoading} changeMessage={setMessage} /> : null}
                 <div className="main-content">
                     <div className="left-flex-profile">
 
@@ -75,15 +77,15 @@ const MyProfile = () => {
                         <div className="profile-section-two">
                             <p className="username">{
                                 // @ts-ignore
-                                data.username
+                                data.username ? data.username : ''
                             }</p>
                             <p className="params">Account Number: <p className="value">{
                                 // @ts-ignore
-                                data.accountnumber
+                                data.accountnumber ? data.accountnumber : ''
                             }</p></p>
                             <p className="params">Location: <p className="value">{
                                 // @ts-ignore
-                                data.location
+                                data.location ? data.location : ''
                             }</p></p>
                             <p className="params">Twitter: <p className="value">{
                                 // @ts-ignore
@@ -95,7 +97,7 @@ const MyProfile = () => {
                             }</p>
                             <p className="params">Joined On: <p className="value">{
                                 // @ts-ignore
-                                dateFormat(new Date(data.date_joined), "mmmm dS, yyyy")
+                                data.date_joined ? dateFormat(new Date(data.date_joined), "mmmm dS, yyyy") : ''
                             }</p></p>
                         </div>
                     </div>
@@ -135,6 +137,7 @@ const MyProfile = () => {
                             </div>
                     </div>
 
+                    <p>{message}</p>                    
 
                 </div>
             </>

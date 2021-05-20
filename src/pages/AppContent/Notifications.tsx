@@ -27,11 +27,14 @@ const Notifications = () => {
             .then((res) => res.json())
             .then((json) => {
                 console.log(json)
-                setNotifications(json)
                 if (json === 'You need to be authenticated to use this API.') {
                     setWasError(true)
                 } else if (json.detail === 'Error decoding signature.') {
                     setWasError(true)
+                } else if (json.detail === 'Invalid signature.') {
+                    setWasError(true)
+                } else {                    
+                    setNotifications(json)
                 }
                 setTimeout(setLoading, 2000, false)
             })

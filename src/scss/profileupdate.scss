@@ -80,8 +80,9 @@ form{
 }
 
 .profileupdate-imagesection > img{
-    margin-top: 4vh;
     width: calc(5vw + 90px);
+    height: calc(5vw + 90px);
+    object-fit: cover;
     border: 2px solid white;
     border-radius: 20px;
 }
@@ -96,7 +97,7 @@ form{
 .profileupdate-imagesection > label > img{
     position: absolute;
     left: 50%;
-    top: 30%;
+    top: 50%;
     transform: translate(-50%, -50%);
     width: calc(1vw + 20px);
     transition: .3s;

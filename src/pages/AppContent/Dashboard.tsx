@@ -26,7 +26,8 @@ function Dashboard() {
         .then(json => {
             if (json.detail === 'Error decoding signature.') {
                 console.log(json)
-                localStorage.removeItem('token')
+                setWasError(true)
+            } else if (json.detail === 'Invalid signature.') {
                 setWasError(true)
             } else {
                 setData(json)
