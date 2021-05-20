@@ -16,7 +16,7 @@ const Notifications = () => {
     
     useEffect(() => {
         TimeAgo.addLocale(en)
-            fetch(`http://localhost:8000/notifications`, {
+            fetch(`https://api.cashoutcookie.com/notifications`, {
                 method: 'GET',
                 headers: {
                     'Authorization': `JWT ${localStorage.getItem('token')}`,

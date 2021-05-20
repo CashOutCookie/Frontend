@@ -13,7 +13,7 @@ function Dashboard() {
    
 
     useEffect(() => {
-        fetch('http://localhost:8000/whoami/', {
+        fetch('https://api.cashoutcookie.com/whoami/', {
             method: 'GET',
             headers: {
                 'Authorization': `JWT ${localStorage.getItem('token')}`,

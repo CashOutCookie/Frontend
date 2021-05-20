@@ -15,7 +15,7 @@ const Rank = () => {
     const history = useHistory()
     
     useEffect(() => {
-            fetch(`http://localhost:8000/leaderboard`, {
+            fetch(`https://api.cashoutcookie.com/leaderboard`, {
                 method: 'GET',
                 headers: {
                     'Authorization': `JWT ${localStorage.getItem('token')}`,

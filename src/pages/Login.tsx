@@ -31,7 +31,7 @@ const Login = () => {
             password: password
         }
 
-        fetch(`http://localhost:8000/${platform}/`, {
+        fetch(`https://api.cashoutcookie.com/${platform}/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

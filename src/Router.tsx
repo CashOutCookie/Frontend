@@ -1,5 +1,8 @@
 import React from 'react';
 import { Activate } from './pages/Activate'
+import { Contact } from './pages/Contact'
+import { Prizes } from './pages/Prizes'
+import { Sponsor } from './pages/Sponsor'
 import { Success } from './pages/Success'
 import { User } from './pages/AppContent/User'
 import { Bank } from './pages/AppContent/Bank'
@@ -22,8 +25,11 @@ function Router() {
       <BrowserRouter>
         <Switch>
           <Route path="/app" exact component={App} />
+          <Route path="/prizes" exact component={Prizes} />
+          <Route path="/sponsor" exact component={Sponsor} />
           <Route path="/activate" exact component={Activate} />
-          <Route path="/success" exact component={Success} />
+          <Route path="/contact" exact component={Contact} />
+          <Route path="/verify/success" exact component={Success} />
           <Route path="/user" component={User} />
           <Route path="/quiz" exact component={Quiz} />
           <Route path="/bank" exact component={Bank} />

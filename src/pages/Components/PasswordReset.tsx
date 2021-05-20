@@ -13,7 +13,7 @@ function PasswordReset(props) {
     const handleEmail = (event) => {
         event.preventDefault()
         setMessage('Sending password reset email...')
-        fetch('http://localhost:8000/changepassword/', {
+        fetch('https://api.cashoutcookie.com/changepassword/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

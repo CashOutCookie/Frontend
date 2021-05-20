@@ -20,12 +20,12 @@ html, body {
 }
 article > h1 {
     font-family: $regular;
-    font-size: 50px;
+    font-size: calc(18px + 3vw);
 }
 h2 {
     font-family: $regular;
     color: #323232;
-    font-size: 35px;
+    font-size: calc(15px + 2vw);
 }
 p {
     font-family: $bold;

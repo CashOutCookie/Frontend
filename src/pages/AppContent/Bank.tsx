@@ -16,7 +16,7 @@ const BankContent = () => {
     const [wasError, setWasError] = useState(false)
 
     useEffect(() => {
-        fetch('http://localhost:8000/whoami/', {
+        fetch('https://api.cashoutcookie.com/whoami/', {
             method: 'GET',
             headers: {
                 'Authorization': `JWT ${localStorage.getItem('token')}`,
@@ -42,7 +42,7 @@ const BankContent = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        fetch('http://localhost:8000/transfer/', {
+        fetch('https://api.cashoutcookie.com/transfer/', {
             method: 'POST',
             headers: {
                 'Authorization': `JWT ${localStorage.getItem('token')}`,

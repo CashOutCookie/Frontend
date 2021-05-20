@@ -14,7 +14,7 @@ const User = () => {
 
     useEffect(() => {
         const parsed = qs.parse(window.location.search)
-        fetch(`http://localhost:8000/profile/${parsed.id}`, {
+        fetch(`https://api.cashoutcookie.com/profile/${parsed.id}`, {
             method: 'GET',
             headers: {
                 'Authorization': `JWT ${localStorage.getItem('token')}`,
