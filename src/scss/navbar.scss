@@ -1,6 +1,5 @@
 @import 'vars.scss';
 
-
 nav {
     display: flex;
     align-items: center;
@@ -76,6 +75,7 @@ nav > * {
     align-items: flex-end;
     margin-right: 10%;
     cursor: pointer;
+    z-index: 10;
 }
 
 @media screen and (max-width: 1280px) {
@@ -87,7 +87,39 @@ nav > * {
     }
 }
 
+.navmodal-a > a{
+    font-family: $bold;
+    color: rgb(255, 255, 255) !important;
+    background: #272b3b;
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px 0px;
+    text-align: center;
+    transition: .2s;
+    &:hover{
+        background: #FF94C9;
+    }
+}
+.navmodal-a{
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    border-top-right-radius: 0px;
+    align-items: center;
+    justify-content: center;
+    position: fixed; 
+    margin-top: calc(3vh + 50px);
+    margin-right: calc(7vw + 15px);
+    right: 0;
+    top: 0;
+    width: calc(10vw + 150px); 
+    height: calc(4vh + 300px);
+    background-color: #32374B;
+}
 
+.navmodal{
+    display: none;
+}
 @media screen and (max-width: 900px) {
     .nav-links {
         display: none;

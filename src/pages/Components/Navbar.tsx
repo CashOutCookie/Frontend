@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react';
 import '../../scss/navbar.scss'
 
 function Navbar() {
+    
+    const [sidebar, setSidebar] = useState(false)
+    const toggle = () => {
+        setSidebar(!sidebar) 
+    }
+
     return(
         <div>
             <nav>
@@ -20,12 +26,21 @@ function Navbar() {
                     </ul>
                 </div>
 
-                <div className="burger">
+                <div className="burger" onClick={toggle}>
                     <div>
                         <div className="line1 line"></div>
                         <div className="line2 line"></div>
                         <div className="line3 line"></div>
                     </div>
+                </div>
+
+                <div className={sidebar ? "navmodal-a" : "navmodal"}>
+                        <a href="/">Home</a>
+                        <a href="/rules">Rules</a>
+                        <a href="/tutorial">Tutorial</a>
+                        <a href="/prizes">Prizes</a>
+                        <a href="/sponsor">Sponsor</a>
+                        <a href="/contact">Contact</a>
                 </div>
 
             </nav>
