@@ -1,0 +1,141 @@
+@import 'vars.scss';
+
+// .app-heading {
+//     color: white;
+//     font-family: $bold;
+//     font-size: 1.8rem;
+//     margin-top: 7.1vh;
+// }
+
+.login-main {
+    background: $darkbg;
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-main h1 {
+    @include headtext()
+}
+
+.login-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(10vw + 400px);
+    height: calc(35vh + 120px);
+    background: $bluebg;
+    border-radius: calc(.5vw + 15px);
+}
+.login-box > form {
+    margin-top: 1%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.login-box > form > p {
+    align-self: flex-start;
+    margin-left: 8%;
+    font-family: $bold;
+    color: white;
+    font-size: calc(.5vw + 12px);
+    margin-top: 5%;
+}
+.login-passwordhead{
+    margin-top: 1vh;
+}
+.login-box > form > input {
+    height: calc(1vw + 22px);
+    width: 85%;
+    border-radius: calc(.2vw + 10px);
+    border: none;
+    font-size: 18px;
+    padding-left: 12px;
+    transition: .2s;
+    border: 2px solid white;
+    &:focus{
+        border: 2px solid $main;
+    }
+}
+.login-box > form > button {
+    @include formbutton(calc(2vh + 22px), 38%);
+    margin-top: 5%;
+}
+
+
+.login-footer{
+    display: flex;
+    width: 90%;
+    margin-top: 3%;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+.login-footer > p {
+    color: $main;
+    font-size: calc(.4vw + 10px);
+    transition: .2s;
+    &:hover{
+        color: $darkmain;
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;    
+    }
+}
+
+.login-info-message{
+    color: white;
+    font-size: calc(10px + 0.4vw);
+}
+
+@media screen and (max-width: 680px) {
+    .login-box {
+        width: 80vw;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .login-box {
+        width: 80vw;
+    }
+    .login-box > form > button {
+        width: 45%;
+    }
+    .login-box > form > input {
+        height: calc(1.5vw + 20px);
+        width: 80%;
+    }
+}
+
+@media screen and (max-height: 600px) and (min-width: 1025px){
+    .login-emailhead{
+        margin-top: 0%;
+    }
+    .login-passwordhead{
+        margin-top: 2%;
+    }
+    .login-box > form > button{
+        margin-top: 10%;
+    }
+     
+}
+
+@media screen and (max-width: 400px){
+    .login-footer > p{
+        font-size: 11px;
+    }
+}
+
+.register {
+    height: calc(45vh + 130px) !important;
+}
+
+.register > form > input {
+    margin-top: -1% !important;
+}
+
+.register p {
+    margin-top: 3.5% !important;
+}
