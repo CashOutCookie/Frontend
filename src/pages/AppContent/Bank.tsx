@@ -14,6 +14,7 @@ const BankContent = () => {
     const [message, setMessage] = useState('Transaction history and deposits coming soon...')
     const [loading, setLoading] = useState(true)
     const [wasError, setWasError] = useState(false)
+    const [disabled, setDisabled] = useState(false)
 
     useEffect(() => {
         fetch('https://api.cashoutcookie.com/whoami/', {
@@ -32,6 +33,7 @@ const BankContent = () => {
             } else {
                 setBalance(json.balance)
                 setLoading(false)
+                setDisabled(false)
                 console.log(json)
             }
         })
@@ -75,7 +77,7 @@ const BankContent = () => {
                         <form onSubmit={handleSubmit}>
                             <input required placeholder="Account Number" onChange={e => setAccountNumber(e.target.value)}></input>
                             <input required placeholder="Amount" onChange={e => setAmount(e.target.value)}></input>
-                            <button type="submit">Transfer</button>
+                            <button onClick={() => setDisabled(true)} type="submit">Transfer</button>
                         </form>
                     </div>
                         <p className="transferMessage">{message}</p>

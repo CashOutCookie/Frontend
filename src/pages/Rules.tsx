@@ -18,7 +18,7 @@ export const Rules = () => {
                     <h1>Rules</h1>
                     <div className="section">
                         <ul>
-                            <li>You have to join our Sponsor's Discord server to be eligible for the giveaway.</li>
+                            <li>You have to join our Sponsor's <a href="https://discord.gg/teFD7JGbJa">Discord server</a> to be eligible for the giveaway.</li>
                             <li>Any types of exploits found throughout CashoutCookie's app are stricly prohibited and should be reported if found.</li>
                             <li>You cannot make multiple accounts to earn more cookies, we will ban you.</li>
                             <li>Please don't share flags with other people.</li>
