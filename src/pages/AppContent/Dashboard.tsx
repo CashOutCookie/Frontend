@@ -47,8 +47,8 @@ function Dashboard() {
             let rankWidth = data.rank ? Number(data.rank.split('/')[0]) : 0
         // @ts-ignore
             let totalWidth = data.rank ? Number(data.rank.split('/')[1]) : 0
-            let actualWidth = ((totalWidth - rankWidth) / totalWidth) * 100
-        return(
+            let actualWidth = rankWidth === 1 ? 100 : ((totalWidth - rankWidth) / totalWidth) * 100
+            return(
             <div className="dash-overflow">
     
                 <div className="dash-flex">

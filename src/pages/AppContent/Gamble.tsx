@@ -40,6 +40,7 @@ const GambleContent = () => {
     }, [])
 
     const handleSubmit = (e) => {
+        setMessage('Loading...')
         e.preventDefault()
         fetch('https://api.cashoutcookie.com/gamble/', {
             method: 'POST',

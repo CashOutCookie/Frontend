@@ -55,7 +55,7 @@ const MyProfile = () => {
         // @ts-ignore
         let totalWidth = data.rank ? Number(data.rank.split('/')[1]) : 0
         
-        let actualWidth = ((totalWidth - rankWidth) / totalWidth) * 100
+        let actualWidth = rankWidth === 1 ? 100 : ((totalWidth - rankWidth) / totalWidth) * 100
 
         console.log(actualWidth, rankWidth, totalWidth)
 
