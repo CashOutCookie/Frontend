@@ -46,8 +46,7 @@ const Login = () => {
                     setIsLoggedIn(true)
                 } else if (json.token) {
                     setMessage('You are succesfully registered')
-                    localStorage.setItem('token', json.token)
-                    setTimeout(() => setRedirect(true), 1000)
+                    setRedirect(true)
                 } else {
                     setMessage('Unable to login/signup with the credentials provided.')
                 }
