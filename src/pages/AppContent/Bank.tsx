@@ -44,6 +44,7 @@ const BankContent = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        setMessage('Transferring...')
         fetch('https://api.cashoutcookie.com/transfer/', {
             method: 'POST',
             headers: {
@@ -71,13 +72,19 @@ const BankContent = () => {
         return(
             <>
                 <div className="bank-content">
-                    <p className="bankBalance">Your current balance is {balance}</p>
+                    <p className="bankBalance">Your current balance after transfer would be {
+                        Number(amount) > Number(balance) ? balance : Number(balance) - Number(amount)
+                    }</p>
                     <div className="transfer-box">
                         <p>Transfer</p>
                         <form onSubmit={handleSubmit}>
                             <input required placeholder="Account Number" onChange={e => setAccountNumber(e.target.value)}></input>
                             <input required placeholder="Amount" onChange={e => setAmount(e.target.value)}></input>
-                            <button onClick={() => setDisabled(true)} type="submit">Transfer</button>
+                            <button onClick={() => {
+                                if (amount && accountNumber) {
+                                    setDisabled(true)
+                                }
+                            }} type="submit">Transfer</button>
                         </form>
                     </div>
                         <p className="transferMessage">{message}</p>
