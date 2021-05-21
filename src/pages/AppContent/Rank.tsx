@@ -15,7 +15,7 @@ const Rank = () => {
     const history = useHistory()
     
     useEffect(() => {
-            fetch(`https://heroku-moment.herokuapp.com/leaderboard`, {
+            fetch(`https://api.cashoutcookie.com/leaderboard`, {
                 method: 'GET',
                 headers: {
                     'Authorization': `JWT ${localStorage.getItem('token')}`,

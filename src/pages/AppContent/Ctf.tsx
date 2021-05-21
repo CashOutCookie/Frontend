@@ -20,7 +20,7 @@ const CtfContent = () => {
         event.preventDefault()
         console.log(flag)
         setFetched(false)
-        fetch('https://heroku-moment.herokuapp.com/flagscheck/', {
+        fetch('https://api.cashoutcookie.com/flagscheck/', {
             method: 'POST',
             headers: {
                 'Authorization': `JWT ${localStorage.getItem('token')}`,
@@ -39,7 +39,7 @@ const CtfContent = () => {
     }
 
     useEffect(() => {
-        fetch('https://heroku-moment.herokuapp.com/flagsget', {
+        fetch('https://api.cashoutcookie.com/flagsget', {
             method: 'GET',
             headers: {
                 'Authorization': `JWT ${localStorage.getItem('token')}`,

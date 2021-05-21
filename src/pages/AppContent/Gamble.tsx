@@ -15,7 +15,7 @@ const GambleContent = () => {
     const [wasError, setWasError] = useState(false)
 
     useEffect(() => {
-        fetch('https://heroku-moment.herokuapp.com/whoami/', {
+        fetch('https://api.cashoutcookie.com/whoami/', {
             method: 'GET',
             headers: {
                 'Authorization': `JWT ${localStorage.getItem('token')}`,
@@ -41,7 +41,7 @@ const GambleContent = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        fetch('https://heroku-moment.herokuapp.com/gamble/', {
+        fetch('https://api.cashoutcookie.com/gamble/', {
             method: 'POST',
             headers: {
                 'Authorization': `JWT ${localStorage.getItem('token')}`,

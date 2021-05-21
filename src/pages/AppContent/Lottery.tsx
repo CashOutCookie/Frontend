@@ -14,7 +14,7 @@ const LotteryContent = () => {
     const [ticket, setTicket] = useState('')
 
     useEffect(() => {
-        fetch('https://heroku-moment.herokuapp.com/myticket', {
+        fetch('https://api.cashoutcookie.com/myticket', {
             method: 'GET',
             headers: {
                 'Authorization': `JWT ${localStorage.getItem('token')}`,
@@ -32,7 +32,7 @@ const LotteryContent = () => {
                 setTicket(json.image)
                 setLoading(false)
             } else if (json.image.error === 'You don not have any ticket.') {
-                fetch('https://heroku-moment.herokuapp.com/ticketsget', {
+                fetch('https://api.cashoutcookie.com/ticketsget', {
                     method: 'GET',
                     headers: {
                         'Authorization': `JWT ${localStorage.getItem('token')}`,
@@ -51,7 +51,7 @@ const LotteryContent = () => {
     }, [])
 
     const buyTicket = (ticketNumber) => {
-        fetch(`https://heroku-moment.herokuapp.com/buyticket/`, {
+        fetch(`https://api.cashoutcookie.com/buyticket/`, {
             method: 'POST',
             headers: {
                 'Authorization': `JWT ${localStorage.getItem('token')}`,
