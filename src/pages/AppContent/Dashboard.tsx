@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Logout } from '../Components/CheckLogin'
+import { LoadingAnimation } from '../Components/Loading'
 import bankGradient from '../../images/Gradients/Bank.png'
 import workGradient from '../../images/Gradients/Work.png'
 import spendGradient from '../../images/Gradients/Spend.png'
@@ -41,7 +42,7 @@ function Dashboard() {
     if (wasError) {
         return <Logout />
     } else if (loading) {
-        return <></>
+        return <LoadingAnimation />
     } else {
          // @ts-ignore
             let rankWidth = data.rank ? Number(data.rank.split('/')[0]) : 0
