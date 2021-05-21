@@ -29,9 +29,7 @@ const Notifications = () => {
                 console.log(json)
                 if (json === 'You need to be authenticated to use this API.') {
                     setWasError(true)
-                } else if (json.detail === 'Error decoding signature.') {
-                    setWasError(true)
-                } else if (json.detail === 'Invalid signature.') {
+                } else if (json.detail === 'Error decoding signature.' || json.detail === 'Invalid signature.' || json.detail === 'Signature has expired.') {
                     setWasError(true)
                 } else {                    
                     setNotifications(json)

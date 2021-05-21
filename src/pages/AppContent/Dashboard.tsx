@@ -23,10 +23,8 @@ function Dashboard() {
         })
         .then(res => res.json())
         .then(json => {
-            if (json.detail === 'Error decoding signature.') {
+            if (json.detail === 'Error decoding signature.' || json.detail === 'Invalid signature.' || json.detail === 'Signature has expired.') {
                 console.log(json)
-                setWasError(true)
-            } else if (json.detail === 'Invalid signature.') {
                 setWasError(true)
             } else {
                 setData(json)
