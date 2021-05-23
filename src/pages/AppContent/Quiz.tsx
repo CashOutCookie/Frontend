@@ -32,6 +32,7 @@ const QuizContent = () => {
             "type": "quiz",
             "answer": answer
         }))
+        setLoading(true)
     }
 
     useEffect(() => {
@@ -61,10 +62,28 @@ const QuizContent = () => {
             setThrottled(data.throttle)
             setLoading(false)
         } else if (data.message) {
-            setMessage(data.message)
-            setCookies(data.earned)
-            setDone(true)
-            setLoading(false)
+            fetch('https://api.cashoutcookie.com/quizreward/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `JWT ${localStorage.getItem('token')}`
+                },
+                body: JSON.stringify({
+                    balance: data.earned.split('earned ')[1]
+                })
+            })
+            .then(res => res.json())
+            .then(json => {
+                setMessage(data.message)
+                setCookies(data.earned)
+                setDone(true)
+                setLoading(false)
+                console.log(json)
+            })
+            .catch((err) => {
+                console.log(err)
+                setMessage('There was an error, please try quiz again later')
+            })
         }
     }
 
@@ -111,7 +130,7 @@ const QuizContent = () => {
             <>
                 <div className="throttle">
                     <p>{message}</p>
-                    <p>{cookies}</p>
+                    <p>{cookies ? cookies : ''}</p>
                 </div>
             </>
         )

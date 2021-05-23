@@ -72,7 +72,7 @@ const BankContent = () => {
         return(
             <>
                 <div className="bank-content">
-                    <p className="bankBalance">Your current balance after transfer would be {
+                    <p className="bankBalance">Your balance after transfer would be {
                         Number(amount) > Number(balance) ? balance : Number(balance) - Number(amount)
                     }</p>
                     <div className="transfer-box">
@@ -84,7 +84,7 @@ const BankContent = () => {
                                 if (amount && accountNumber) {
                                     setDisabled(true)
                                 }
-                            }} type="submit">Transfer</button>
+                            }} disabled={disabled} type="submit">Transfer</button>
                         </form>
                     </div>
                         <p className="transferMessage">{message}</p>
