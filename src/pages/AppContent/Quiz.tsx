@@ -62,28 +62,10 @@ const QuizContent = () => {
             setThrottled(data.throttle)
             setLoading(false)
         } else if (data.message) {
-            fetch('https://api.cashoutcookie.com/quizreward/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `JWT ${localStorage.getItem('token')}`
-                },
-                body: JSON.stringify({
-                    balance: data.earned.split('earned ')[1]
-                })
-            })
-            .then(res => res.json())
-            .then(json => {
-                setMessage(data.message)
-                setCookies(data.earned)
-                setDone(true)
-                setLoading(false)
-                console.log(json)
-            })
-            .catch((err) => {
-                console.log(err)
-                setMessage('There was an error, please try quiz again later')
-            })
+            setMessage(data.message)
+            setCookies(data.earned)
+            setDone(true)
+            setLoading(false)
         }
     }
 
