@@ -8,7 +8,7 @@ import Animation from '../Components/Animations'
 import '../../scss/ctf.scss'
 import Loading from '../../animations/loading.json'
 
-localStorage.setItem('flag', '8ZCRn6UAWLiOZw0N')
+localStorage.setItem('muchWow', '8ZCRn6UAWLiOZw0N')
 
 const CtfContent = () => {
     const [fetched, setFetched] = useState(false)
@@ -85,7 +85,7 @@ const CtfContent = () => {
                     } className="flag-submit" type="submit">Submit</button>
                 </form>
                 <p>{message}</p>
-                <p style={{ display: 'none' }}>Well, looks like you've found it. Here you go: TBhxquXNInkFxk56</p>
+                <p style={{ display: 'none' }}>TBhxquXNInkFxk56</p>
             </div>
             </>
         )
