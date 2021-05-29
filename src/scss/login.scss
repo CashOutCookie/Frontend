@@ -139,3 +139,13 @@
 .register p {
     margin-top: 3.5% !important;
 }
+
+.reset-pass {
+    height: calc(150px + 5vw) !important;
+}
+
+.password-reset-message {
+    text-align: center;
+    margin-top: calc(25px + 2vw);
+    max-width: calc(200px + 10vw)
+}

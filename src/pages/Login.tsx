@@ -47,8 +47,14 @@ const Login = () => {
                 } else if (json.token) {
                     setMessage('You are succesfully registered')
                     setRedirect(true)
-                } else {
-                    setMessage('Unable to login/signup with the credentials provided.')
+                } else if (json.error) {
+                    setMessage(json.error[0])
+                } else if (json.username) {
+                    setMessage(json.username)
+                } else if (json.email) {
+                    setMessage(json.email)
+                } else if (json.password) {
+                    setMessage(json.password)
                 }
             })
     }

@@ -18,6 +18,7 @@ import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import { Landing } from './pages/Landing';
 import { Rules } from './pages/Rules';
 import { Tutorial } from './pages/Tutorial';
+import { PRContent } from './pages/PasswordResetConfirm'
 
 function Router() {
   return(
@@ -42,6 +43,7 @@ function Router() {
           <Route path="/" exact component={Landing}></Route>
           <Route path="/rules" exact component={Rules}></Route>
           <Route path="/tutorial" exact component={Tutorial}></Route>
+          <Route path="/confirmreset" component={PRContent}></Route>
         </Switch>
       </BrowserRouter>
     </div>
